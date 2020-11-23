@@ -1,5 +1,6 @@
 import {
   ChangeDetectorRef,
+  Directive,
   Injector,
   OnChanges,
   SimpleChanges,
@@ -45,6 +46,8 @@ import { InjectableSuperclass } from './injectable-superclass';
  * }
  * ```
  */
+@Directive({ selector: '[sDirectiveSuperclass]' })
+// tslint:disable-next-line:directive-class-suffix
 export abstract class DirectiveSuperclass
   extends InjectableSuperclass
   implements OnChanges {
