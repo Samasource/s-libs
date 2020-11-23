@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.0.0](https://github.com/simontonsoftware/s-libs/compare/v11.0.0-next.0...v11.0.0) (2020-11-23)
+
+### Bug Fixes
+
+- **ng-core:** DirectiveSuperclass can now be used for a pipe ([ebf1056](https://github.com/simontonsoftware/s-libs/commit/ebf1056c5f6394df39ed72aa994b6be10b224eb9))
+
 ## [11.0.0-next.0](https://github.com/simontonsoftware/s-libs/compare/v10.0.0...v11.0.0-next.0) (2020-11-21)
 
 ### ⚠ BREAKING CHANGES
