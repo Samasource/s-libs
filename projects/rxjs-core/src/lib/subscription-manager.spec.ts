@@ -1,9 +1,7 @@
 import { expectSingleCallAndReset } from '@s-libs/ng-dev';
 import { of, Subject, throwError } from 'rxjs';
-import {
-  mixInSubscriptionManager,
-  SubscriptionManager,
-} from './subscription-manager';
+import mixInSubscriptionManager from './mix-in-subscription-manager';
+import { SubscriptionManager } from './subscription-manager';
 
 describe('SubscriptionManager', () => {
   let next: jasmine.Spy;
