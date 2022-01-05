@@ -1,6 +1,9 @@
-import { OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Constructor } from '@s-libs/js-core';
-import { mixInSubscriptionManager } from '@s-libs/rxjs-core';
+import {
+  mixInSubscriptionManager,
+  SubscriptionManager,
+} from '@s-libs/rxjs-core';
 import { Subject } from 'rxjs';
 
 /**
@@ -49,6 +52,20 @@ export function mixInInjectableSuperclass<B extends Constructor>(Base: B) {
  * }
  * ```
  */
-export abstract class InjectableSuperclass extends mixInInjectableSuperclass(
-  Object,
-) {}
+@Injectable()
+export abstract class InjectableSuperclass
+  extends SubscriptionManager
+  implements OnDestroy {
+  #destructionSubject = new Subject<undefined>();
+
+  /**
+   * An observable that emits once when this object is destroyed, then completes.
+   */
+  destruction$ = this.#destructionSubject.asObservable();
+
+  ngOnDestroy(): void {
+    this.unsubscribe();
+    this.#destructionSubject.next();
+    this.#destructionSubject.complete();
+  }
+}

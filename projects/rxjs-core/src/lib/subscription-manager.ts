@@ -62,4 +62,30 @@ export function mixInSubscriptionManager<B extends Constructor>(Base: B) {
  * }
  * ```
  */
-export class SubscriptionManager extends mixInSubscriptionManager(Object) {}
+export class SubscriptionManager implements Unsubscribable {
+  #subscriptions = new Subscription();
+
+  subscribeTo<T>(
+    observable: Observable<T>,
+    next?: (value: T) => void,
+    error?: (error: any) => void,
+    complete?: () => void,
+  ): void {
+    this.#subscriptions.add(
+      observable.subscribe(
+        next?.bind(this),
+        error?.bind(this),
+        complete?.bind(this),
+      ),
+    );
+  }
+
+  manage(subscription: Subscription): void {
+    this.#subscriptions.add(subscription);
+  }
+
+  unsubscribe(): void {
+    this.#subscriptions.unsubscribe();
+    this.#subscriptions = new Subscription();
+  }
+}
