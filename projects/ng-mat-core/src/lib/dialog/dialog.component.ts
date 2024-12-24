@@ -69,12 +69,11 @@ export const SL_DIALOG_DATA = new InjectionToken('SL_DIALOG_DATA');
 export const DEFAULT_OK_VALUE = Symbol('OK');
 
 @Component({
-  selector: 'sl-dialog',
-  standalone: true,
-  imports: [MatButtonModule, MatDialogModule, NgComponentOutlet],
-  templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'sl-dialog',
+    imports: [MatButtonModule, MatDialogModule, NgComponentOutlet],
+    templateUrl: './dialog.component.html',
+    styleUrl: './dialog.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DialogComponent {
   protected data: DialogData<unknown> = inject(MAT_DIALOG_DATA);

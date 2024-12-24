@@ -33,9 +33,8 @@ class CounterComponent extends FormComponentSuperclass<number> {
 }
 
 @Component({
-  standalone: true,
-  imports: [CounterComponent, FormsModule, NgIf],
-  template: `
+    imports: [CounterComponent, FormsModule, NgIf],
+    template: `
     <sl-counter
       #counter="ngModel"
       [disabled]="shouldDisable"
@@ -45,7 +44,7 @@ class CounterComponent extends FormComponentSuperclass<number> {
       Touched!
     }
     <button (click)="shouldDisable = !shouldDisable">Toggle Disabled</button>
-  `,
+  `
 })
 class TestComponent {
   @Input() value = 0;

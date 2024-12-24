@@ -109,25 +109,23 @@ describe('spreadArrayStore$()', () => {
       }
 
       @Component({
-        standalone: true,
-        selector: 'app-hero',
-        template: `{{ heroStore('name').$ | async }}`,
-        imports: [AsyncPipe],
-      })
+    selector: 'app-hero',
+    template: `{{ heroStore('name').$ | async }}`,
+    imports: [AsyncPipe]
+})
       class HeroComponent {
         @Input() heroStore!: Store<Hero>;
       }
 
       // vvvv documentation below
       @Component({
-        standalone: true,
-        template: `
+    template: `
           @for (heroStore of heroStores$ | async; track heroStore) {
             <app-hero [heroStore]="heroStore" />
           }
         `,
-        imports: [HeroComponent, AsyncPipe],
-      })
+    imports: [HeroComponent, AsyncPipe]
+})
       class HeroListComponent implements OnChanges {
         @Input() heroesStore!: Store<Hero[]>;
         protected heroStores$!: Observable<Array<Store<Hero>>>;

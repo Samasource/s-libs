@@ -127,14 +127,13 @@ describe('spreadArrayStore()', () => {
 
       // vvvv documentation below
       @Component({
-        standalone: true,
-        template: `
+    template: `
           @for (heroStore of heroStores(); track heroStore) {
             <app-hero [heroStore]="heroStore" />
           }
         `,
-        imports: [HeroComponent],
-      })
+    imports: [HeroComponent]
+})
       class HeroListComponent implements OnChanges {
         @Input() heroesStore!: Store<Hero[]>;
         protected heroStores!: Signal<Array<Store<Hero>>>;

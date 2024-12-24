@@ -681,10 +681,9 @@ describe('NasModelDirective', () => {
 
   it('handles `null` for the store (for async pipe compatibility)', () => {
     @Component({
-      standalone: true,
-      imports: [AsyncPipe, NasModelModule],
-      template: `<input [nasModel]="store$ | async" />`,
-    })
+    imports: [AsyncPipe, NasModelModule],
+    template: `<input [nasModel]="store$ | async" />`
+})
     class StoreStreamComponent {
       store$ = new Subject<Store<string>>();
     }
@@ -702,13 +701,12 @@ describe('NasModelDirective', () => {
 
   it('handles `null` for disabled (for async pipe compatibility)', () => {
     @Component({
-      standalone: true,
-      imports: [AsyncPipe, NasModelModule],
-      template: `<input
+    imports: [AsyncPipe, NasModelModule],
+    template: `<input
         [nasModel]="store('val')"
         [disabled]="disabled$ | async"
-      />`,
-    })
+      />`
+})
     class StoreStreamComponent {
       store = new RootStore({ val: 'hi' });
       disabled$ = new Subject<boolean>();

@@ -72,13 +72,12 @@ abstract class AbstractValidatingComponent extends WrappedControlSuperclass<
 describe('ControlSynchronizer', () => {
   it('synchronizes validation 2 ways', () => {
     @Component({
-      selector: `sl-inner`,
-      standalone: true,
-      imports: [ReactiveFormsModule],
-      template: `<input [formControl]="control" />`,
-      providers: [provideValueAccessor(InnerComponent)],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-    })
+    selector: `sl-inner`,
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(InnerComponent)],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
     class InnerComponent extends AbstractValidatingComponent {
       constructor() {
         super('inner');
@@ -86,11 +85,10 @@ describe('ControlSynchronizer', () => {
     }
 
     @Component({
-      standalone: true,
-      imports: [InnerComponent, ReactiveFormsModule],
-      template: `<sl-inner [formControl]="control"></sl-inner>`,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-    })
+    imports: [InnerComponent, ReactiveFormsModule],
+    template: `<sl-inner [formControl]="control"></sl-inner>`,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
     class OuterComponent extends AbstractValidatingComponent {
       constructor() {
         super('outer', { syncError: true });
@@ -143,13 +141,12 @@ describe('ControlSynchronizer', () => {
 
   it('handles async validation', () => {
     @Component({
-      selector: `sl-inner`,
-      standalone: true,
-      imports: [ReactiveFormsModule],
-      template: `<input [formControl]="control" />`,
-      providers: [provideValueAccessor(InnerComponent)],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-    })
+    selector: `sl-inner`,
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(InnerComponent)],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
     class InnerComponent extends AbstractValidatingComponent {
       constructor() {
         super('inner', { doAsyncValidation: true });
@@ -157,11 +154,10 @@ describe('ControlSynchronizer', () => {
     }
 
     @Component({
-      standalone: true,
-      imports: [InnerComponent, ReactiveFormsModule],
-      template: `<sl-inner [formControl]="control"></sl-inner>`,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-    })
+    imports: [InnerComponent, ReactiveFormsModule],
+    template: `<sl-inner [formControl]="control"></sl-inner>`,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
     class OuterComponent extends AbstractValidatingComponent {
       constructor() {
         super('outer', { doAsyncValidation: true });
@@ -215,12 +211,11 @@ describe('ControlSynchronizer', () => {
 
   it('handles delays when transforming errors', () => {
     @Component({
-      selector: `sl-inner`,
-      standalone: true,
-      imports: [ReactiveFormsModule],
-      template: `<input [formControl]="control" />`,
-      providers: [provideValueAccessor(InnerComponent)],
-    })
+    selector: `sl-inner`,
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(InnerComponent)]
+})
     class InnerComponent extends AbstractValidatingComponent {
       outerToInnerDelay$ = new Subject();
       innerToOuterDelay$ = new Subject();
@@ -249,10 +244,9 @@ describe('ControlSynchronizer', () => {
     }
 
     @Component({
-      standalone: true,
-      imports: [InnerComponent, ReactiveFormsModule],
-      template: `<sl-inner [formControl]="control"></sl-inner>`,
-    })
+    imports: [InnerComponent, ReactiveFormsModule],
+    template: `<sl-inner [formControl]="control"></sl-inner>`
+})
     class OuterComponent extends AbstractValidatingComponent {
       constructor() {
         super('outer', { syncError: true });
@@ -305,12 +299,11 @@ describe('ControlSynchronizer', () => {
     let synchronizationHappened = false;
 
     @Component({
-      selector: 'sl-inner',
-      standalone: true,
-      imports: [ReactiveFormsModule],
-      template: `<input [formControl]="control" />`,
-      providers: [provideValueAccessor(InnerComponent)],
-    })
+    selector: 'sl-inner',
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(InnerComponent)]
+})
     class InnerComponent extends WrappedControlSuperclass<string | null> {
       control = new FormControl('');
 
@@ -323,10 +316,9 @@ describe('ControlSynchronizer', () => {
     }
 
     @Component({
-      standalone: true,
-      imports: [InnerComponent, NgIf, ReactiveFormsModule],
-      template: `<sl-inner *ngIf="showInner" [formControl]="control" />`,
-    })
+    imports: [InnerComponent, NgIf, ReactiveFormsModule],
+    template: `<sl-inner *ngIf="showInner" [formControl]="control" />`
+})
     class OuterComponent extends WrappedControlSuperclass<string | null> {
       @Input() showInner!: boolean;
       control = new FormControl('');

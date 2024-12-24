@@ -29,11 +29,10 @@ class DestroyableDirective extends InjectableSuperclass {
 }
 
 @Component({
-  standalone: true,
-  imports: [NgIf, DestroyableDirective],
-  template: `@if (showThings) {
+    imports: [NgIf, DestroyableDirective],
+    template: `@if (showThings) {
     <p slDestroyableDirective>I'm showing.</p>
-  }`,
+  }`
 })
 class TestComponent {
   showThings = true;

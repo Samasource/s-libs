@@ -37,10 +37,9 @@ import { WrappedControlSuperclass } from './wrapped-control-superclass';
 describe('WrappedControlSuperclass', () => {
   it('adds ng-touched to the inner form control at the right time', () => {
     @Component({
-      standalone: true,
-      imports: [ReactiveFormsModule],
-      template: `<input [formControl]="control" />`,
-    })
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`
+})
     class NgTouchedComponent extends WrappedControlSuperclass<string> {
       protected control = new FormControl();
     }
@@ -58,21 +57,19 @@ describe('WrappedControlSuperclass', () => {
   // There is some kind of tricky timing issue when using NasModel and WrappedControlSuperclass that required moving a subscription from `ngOnInit()` to `constructor()` to fix.
   it('catches the first incoming value from a nasModel', () => {
     @Component({
-      selector: 'sl-wrapped-control',
-      standalone: true,
-      imports: [ReactiveFormsModule],
-      template: `<input [formControl]="control" />`,
-      providers: [provideValueAccessor(WrappedControlComponent)],
-    })
+    selector: 'sl-wrapped-control',
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(WrappedControlComponent)]
+})
     class WrappedControlComponent extends WrappedControlSuperclass<string> {
       protected control = new FormControl();
     }
 
     @Component({
-      standalone: true,
-      imports: [WrappedControlComponent, NasModelModule],
-      template: `<sl-wrapped-control [nasModel]="store('value')" />`,
-    })
+    imports: [WrappedControlComponent, NasModelModule],
+    template: `<sl-wrapped-control [nasModel]="store('value')" />`
+})
     class WrapperComponent {
       store = new RootStore({ value: 'initial value' });
     }
@@ -88,12 +85,11 @@ describe('WrappedControlSuperclass', () => {
   describe('translating between inner and outer formats', () => {
     it('allows setting up an observable to translate between inner and outer values', () => {
       @Component({
-        selector: 'sl-observable-translation',
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input [formControl]="control" />`,
-        providers: [provideValueAccessor(ObservableTranslationComponent)],
-      })
+    selector: 'sl-observable-translation',
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(ObservableTranslationComponent)]
+})
       class ObservableTranslationComponent extends WrappedControlSuperclass<
         number,
         string
@@ -117,10 +113,9 @@ describe('WrappedControlSuperclass', () => {
       }
 
       @Component({
-        standalone: true,
-        imports: [ObservableTranslationComponent, FormsModule],
-        template: `<sl-observable-translation [(ngModel)]="outerValue" />`,
-      })
+    imports: [ObservableTranslationComponent, FormsModule],
+    template: `<sl-observable-translation [(ngModel)]="outerValue" />`
+})
       class WrapperComponent {
         @Input() outerValue!: number;
       }
@@ -145,22 +140,20 @@ describe('WrappedControlSuperclass', () => {
 
     it('gracefully handles an error in .innerToOuterValue()', () => {
       @Component({
-        selector: `sl-error-in`,
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input [formControl]="control" />`,
-        providers: [provideValueAccessor(ErrorInComponent)],
-      })
+    selector: `sl-error-in`,
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(ErrorInComponent)]
+})
       class ErrorInComponent extends WrappedControlSuperclass<number> {
         override outerToInnerValue = jasmine.createSpy();
         protected control = new FormControl();
       }
 
       @Component({
-        standalone: true,
-        imports: [ErrorInComponent, FormsModule],
-        template: `<sl-error-in [(ngModel)]="value" />`,
-      })
+    imports: [ErrorInComponent, FormsModule],
+    template: `<sl-error-in [(ngModel)]="value" />`
+})
       class WrapperComponent {
         @Input() value!: string;
       }
@@ -191,22 +184,20 @@ describe('WrappedControlSuperclass', () => {
 
     it('gracefully handles an error in .outerToInnerValue()', () => {
       @Component({
-        selector: `sl-error-out`,
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input [formControl]="control" />`,
-        providers: [provideValueAccessor(ErrorOutComponent)],
-      })
+    selector: `sl-error-out`,
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(ErrorOutComponent)]
+})
       class ErrorOutComponent extends WrappedControlSuperclass<number> {
         override innerToOuterValue = jasmine.createSpy();
         protected control = new FormControl();
       }
 
       @Component({
-        standalone: true,
-        imports: [ErrorOutComponent, FormsModule],
-        template: `<sl-error-out [(ngModel)]="value" />`,
-      })
+    imports: [ErrorOutComponent, FormsModule],
+    template: `<sl-error-out [(ngModel)]="value" />`
+})
       class WrapperComponent {
         value = 'initial value';
       }
@@ -240,12 +231,11 @@ describe('WrappedControlSuperclass', () => {
   describe('validation', () => {
     it('works for simple transformations', () => {
       @Component({
-        selector: 'sl-inner',
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input [formControl]="control" maxlength="2" />`,
-        providers: [provideValueAccessor(InnerComponent)],
-      })
+    selector: 'sl-inner',
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" maxlength="2" />`,
+    providers: [provideValueAccessor(InnerComponent)]
+})
       class InnerComponent extends WrappedControlSuperclass<string | null> {
         control = new FormControl('');
 
@@ -264,10 +254,9 @@ describe('WrappedControlSuperclass', () => {
       }
 
       @Component({
-        standalone: true,
-        imports: [InnerComponent, ReactiveFormsModule],
-        template: `<sl-inner [formControl]="control" required />`,
-      })
+    imports: [InnerComponent, ReactiveFormsModule],
+    template: `<sl-inner [formControl]="control" required />`
+})
       class OuterComponent extends WrappedControlSuperclass<string | null> {
         control = new FormControl('');
       }
@@ -289,12 +278,11 @@ describe('WrappedControlSuperclass', () => {
 
     it('works for complex transformations', () => {
       @Component({
-        selector: 'sl-inner',
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input [formControl]="control" required />`,
-        providers: [provideValueAccessor(InnerComponent)],
-      })
+    selector: 'sl-inner',
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" required />`,
+    providers: [provideValueAccessor(InnerComponent)]
+})
       class InnerComponent extends WrappedControlSuperclass<string | null> {
         protected control = new FormControl('');
 
@@ -305,10 +293,9 @@ describe('WrappedControlSuperclass', () => {
       }
 
       @Component({
-        standalone: true,
-        imports: [InnerComponent, ReactiveFormsModule],
-        template: `<sl-inner [formControl]="control" />`,
-      })
+    imports: [InnerComponent, ReactiveFormsModule],
+    template: `<sl-inner [formControl]="control" />`
+})
       class OuterComponent extends WrappedControlSuperclass<string | null> {
         control = new FormControl('');
       }
@@ -323,32 +310,29 @@ describe('WrappedControlSuperclass', () => {
     describe('when there is an outer `NgControl`', () => {
       it('does not sync with ancestor controls', () => {
         @Component({
-          selector: `sl-inner`,
-          standalone: true,
-          imports: [ReactiveFormsModule],
-          template: `<input [formControl]="control" />`,
-          providers: [provideValueAccessor(InnerComponent)],
-        })
+    selector: `sl-inner`,
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(InnerComponent)]
+})
         class InnerComponent extends WrappedControlSuperclass<string | null> {
           control = new FormControl('');
         }
 
         @Component({
-          selector: `sl-middle`,
-          standalone: true,
-          imports: [InnerComponent],
-          template: `<sl-inner />`,
-          providers: [provideValueAccessor(MiddleComponent)],
-        })
+    selector: `sl-middle`,
+    imports: [InnerComponent],
+    template: `<sl-inner />`,
+    providers: [provideValueAccessor(MiddleComponent)]
+})
         class MiddleComponent extends WrappedControlSuperclass<string | null> {
           control = new FormControl('');
         }
 
         @Component({
-          standalone: true,
-          imports: [MiddleComponent, FormsModule],
-          template: `<sl-middle ngModel required />`,
-        })
+    imports: [MiddleComponent, FormsModule],
+    template: `<sl-middle ngModel required />`
+})
         class OuterComponent {}
 
         const ctx = new ComponentContext(OuterComponent);
@@ -362,27 +346,25 @@ describe('WrappedControlSuperclass', () => {
         // It was not syncing properly with `FormControlName`: https://github.com/Samasource/s-libs/issues/82
 
         @Component({
-          selector: 'sl-inner',
-          standalone: true,
-          imports: [ReactiveFormsModule],
-          template: `<input [formControl]="control" />`,
-          providers: [provideValueAccessor(InnerComponent)],
-        })
+    selector: 'sl-inner',
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(InnerComponent)]
+})
         class InnerComponent extends WrappedControlSuperclass<string | null> {
           protected control = new FormControl('');
         }
 
         @Component({
-          standalone: true,
-          imports: [FormsModule, InnerComponent, ReactiveFormsModule],
-          template: `
+    imports: [FormsModule, InnerComponent, ReactiveFormsModule],
+    template: `
             <sl-inner id="model" [ngModel]="''" required />
             <sl-inner id="control" [formControl]="control" />
             <form [formGroup]="group">
               <sl-inner id="name" formControlName="inner" />
             </form>
-          `,
-        })
+          `
+})
         class OuterComponent {
           protected control = new FormControl('', Validators.required);
           protected group = new FormGroup({
@@ -414,11 +396,10 @@ describe('WrappedControlSuperclass', () => {
     it('works for the simple one', () => {
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv begin example
       @Component({
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input [formControl]="control" />`,
-        providers: [provideValueAccessor(StringComponent)],
-      })
+    imports: [ReactiveFormsModule],
+    template: `<input [formControl]="control" />`,
+    providers: [provideValueAccessor(StringComponent)]
+})
       class StringComponent extends WrappedControlSuperclass<string | null> {
         control = new FormControl('');
       }
@@ -435,12 +416,11 @@ describe('WrappedControlSuperclass', () => {
     it('works for the one that modifies the value', () => {
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv begin example
       @Component({
-        selector: 'sl-date',
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `<input type="datetime-local" [formControl]="control" />`,
-        providers: [provideValueAccessor(DateComponent)],
-      })
+    selector: 'sl-date',
+    imports: [ReactiveFormsModule],
+    template: `<input type="datetime-local" [formControl]="control" />`,
+    providers: [provideValueAccessor(DateComponent)]
+})
       class DateComponent extends WrappedControlSuperclass<
         Date | null,
         string | null
@@ -462,10 +442,9 @@ describe('WrappedControlSuperclass', () => {
       // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ end example
 
       @Component({
-        standalone: true,
-        imports: [DateComponent, FormsModule],
-        template: `<sl-date [(ngModel)]="date" />`,
-      })
+    imports: [DateComponent, FormsModule],
+    template: `<sl-date [(ngModel)]="date" />`
+})
       class TestComponent {
         date = new Date();
       }
@@ -495,17 +474,16 @@ describe('WrappedControlSuperclass', () => {
       }
 
       @Component({
-        selector: 'sl-full-name',
-        standalone: true,
-        imports: [ReactiveFormsModule],
-        template: `
+    selector: 'sl-full-name',
+    imports: [ReactiveFormsModule],
+    template: `
           <div [formGroup]="control">
             <input id="first" formControlName="firstName" />
             <input id="last" formControlName="lastName" />
           </div>
         `,
-        providers: [provideValueAccessor(FullNameComponent)],
-      })
+    providers: [provideValueAccessor(FullNameComponent)]
+})
       class FullNameComponent extends WrappedControlSuperclass<
         FullName | null,
         Partial<FullName>
@@ -533,12 +511,11 @@ describe('WrappedControlSuperclass', () => {
       // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ end example
 
       @Component({
-        standalone: true,
-        imports: [FullNameComponent, FormsModule],
-        template: `
+    imports: [FullNameComponent, FormsModule],
+    template: `
           <sl-full-name [ngModel]="fullName" [disabled]="disabled" />
-        `,
-      })
+        `
+})
       class TestComponent {
         @Input() disabled = false;
         fullName = { firstName: 'Rinat', lastName: 'Arsaev' };
@@ -563,18 +540,16 @@ describe('WrappedControlSuperclass', () => {
 describe('WrappedControlSuperclass tests using an old style fixture', () => {
   @Component({
     selector: `sl-string-component`,
-    standalone: true,
     imports: [ReactiveFormsModule],
     template: ` <input [formControl]="control" /> `,
     providers: [provideValueAccessor(StringComponent)],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-  })
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
   class StringComponent extends WrappedControlSuperclass<string> {
     protected control = new FormControl();
   }
 
   @Component({
-    standalone: true,
     imports: [CommonModule, FormsModule, StringComponent],
     template: `
       <sl-string-component
@@ -585,8 +560,8 @@ describe('WrappedControlSuperclass tests using an old style fixture', () => {
       />
       <div *ngIf="stringControl.touched">Touched!</div>
       <button (click)="shouldDisable = !shouldDisable">Toggle Disabled</button>
-    `,
-  })
+    `
+})
   class TestComponent {
     emissions = 0;
     string = '';

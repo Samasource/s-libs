@@ -7,11 +7,10 @@ import { getStyle } from '../test-utils';
 describe('colors.scss', () => {
   it('does not include themes', () => {
     @Component({
-      standalone: true,
-      imports: [MatButtonModule],
-      styleUrl: './minimal-config.spec.scss',
-      template: `<button mat-button>Clickity click</button>`,
-    })
+    imports: [MatButtonModule],
+    styleUrl: './minimal-config.spec.scss',
+    template: `<button mat-button>Clickity click</button>`
+})
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent);
@@ -23,11 +22,10 @@ describe('colors.scss', () => {
 
   it('allows passing in a custom palette key', () => {
     @Component({
-      standalone: true,
-      imports: [MatToolbarModule],
-      styleUrl: './custom-palette-key.spec.scss',
-      template: `<mat-toolbar color="accent" />`,
-    })
+    imports: [MatToolbarModule],
+    styleUrl: './custom-palette-key.spec.scss',
+    template: `<mat-toolbar color="accent" />`
+})
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent, {
@@ -40,14 +38,13 @@ describe('colors.scss', () => {
 
   it('allows specifying only some components', () => {
     @Component({
-      standalone: true,
-      imports: [MatButtonModule, MatToolbarModule],
-      styleUrl: './only-button.spec.scss',
-      template: `
+    imports: [MatButtonModule, MatToolbarModule],
+    styleUrl: './only-button.spec.scss',
+    template: `
         <button mat-button color="primary"></button>
         <mat-toolbar color="accent"></mat-toolbar>
-      `,
-    })
+      `
+})
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent);

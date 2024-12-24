@@ -8,14 +8,13 @@ import { matButtonHarnessWithIcon } from './mat-button-harness-with-icon';
 describe('matButtonHarnessWithIcon()', () => {
   it('filters to the right buttons', () => {
     @Component({
-      standalone: true,
-      imports: [MatButtonModule, MatIconModule, MatIconTestingModule],
-      template: `
+    imports: [MatButtonModule, MatIconModule, MatIconTestingModule],
+    template: `
         <button mat-icon-button><mat-icon>good</mat-icon></button>
         <button mat-icon-button><mat-icon>bad</mat-icon></button>
         <button mat-icon-button><mat-icon>good</mat-icon></button>
-      `,
-    })
+      `
+})
     class ManyIconsComponent {}
 
     const ctx = new ComponentContext(ManyIconsComponent);
@@ -29,13 +28,12 @@ describe('matButtonHarnessWithIcon()', () => {
 
   it('allows use of material button filters', () => {
     @Component({
-      standalone: true,
-      imports: [MatButtonModule, MatIconModule, MatIconTestingModule],
-      template: `
+    imports: [MatButtonModule, MatIconModule, MatIconTestingModule],
+    template: `
         <button mat-icon-button><mat-icon>icon</mat-icon></button>
         <button mat-fab><mat-icon>fab</mat-icon></button>
-      `,
-    })
+      `
+})
     class ManyIconsComponent {}
 
     const ctx = new ComponentContext(ManyIconsComponent);
@@ -50,13 +48,12 @@ describe('matButtonHarnessWithIcon()', () => {
 
   it('only finds buttons with icons', () => {
     @Component({
-      standalone: true,
-      imports: [MatButtonModule, MatIconModule, MatIconTestingModule],
-      template: `
+    imports: [MatButtonModule, MatIconModule, MatIconTestingModule],
+    template: `
         <button mat-button><mat-icon>has icon</mat-icon></button>
         <button mat-button>no icon</button>
-      `,
-    })
+      `
+})
     class ManyIconsComponent {}
 
     const ctx = new ComponentContext(ManyIconsComponent);

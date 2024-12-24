@@ -30,9 +30,8 @@ export class SingleValueStore extends RootStore<any> {
 }
 
 @Component({
-  selector: 'nas-single-value',
-  standalone: true,
-  imports: [CommonModule, NasModelModule],
+    selector: 'nas-single-value',
+    imports: [CommonModule, NasModelModule]
 })
 export class SingleValueComponent extends StoreComponent<any> {
   constructor(store: SingleValueStore) {
@@ -73,16 +72,15 @@ export const citySelectWithCustomCompareFnTemplate = `
 `;
 
 @Component({
-  selector: 'nas-city',
-  standalone: true,
-  imports: [CommonModule, NasModelModule, FormsModule],
-  template: `
+    selector: 'nas-city',
+    imports: [CommonModule, NasModelModule, FormsModule],
+    template: `
     <select [nasModel]="store('selectedCity')">
       @for (c of store('cities').$ | async; track c) {
         <option [ngValue]="c">{{ c.name }}</option>
       }
     </select>
-  `,
+  `
 })
 export class CityComponent extends StoreComponent<CityState> {
   constructor(store: CityStore) {
@@ -119,16 +117,15 @@ export const multipleCityWithCustomCompareFnTemplate = `
 `;
 
 @Component({
-  selector: 'nas-multiple-city',
-  standalone: true,
-  imports: [CommonModule, NasModelModule, FormsModule],
-  template: `
+    selector: 'nas-multiple-city',
+    imports: [CommonModule, NasModelModule, FormsModule],
+    template: `
     <select multiple [nasModel]="store('selectedCities')">
       @for (c of store('cities').$ | async; track c) {
         <option [ngValue]="c">{{ c.name }}</option>
       }
     </select>
-  `,
+  `
 })
 export class MultipleCityComponent extends StoreComponent<MultipleCityState> {
   constructor(store: MultipleCityStore) {
@@ -155,17 +152,16 @@ export class MenuStore extends RootStore<MenuState> {
 }
 
 @Component({
-  selector: 'nas-menu',
-  standalone: true,
-  imports: [NasModelModule],
-  template: `
+    selector: 'nas-menu',
+    imports: [NasModelModule],
+    template: `
     <form>
       <input type="radio" value="chicken" [nasModel]="store('food')" />
       <input type="radio" value="fish" [nasModel]="store('food')" />
       <input type="radio" value="cola" [nasModel]="store('drink')" />
       <input type="radio" value="sprite" [nasModel]="store('drink')" />
     </form>
-  `,
+  `
 })
 export class MenuComponent extends StoreComponent<MenuState> {
   constructor(store: MenuStore) {
@@ -191,10 +187,9 @@ export class NameStore extends RootStore<NameState> {
 }
 
 @Component({
-  selector: 'nas-inner-name',
-  standalone: true,
-  imports: [NasModelModule, FormsModule],
-  template: `
+    selector: 'nas-inner-name',
+    imports: [NasModelModule, FormsModule],
+    template: `
     <input
       name="custom"
       [disabled]="disabled"
@@ -202,13 +197,13 @@ export class NameStore extends RootStore<NameState> {
       (ngModelChange)="changeFn($event)"
     />
   `,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: InnerNameComponent,
-    },
-  ],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            multi: true,
+            useExisting: InnerNameComponent,
+        },
+    ]
 })
 export class InnerNameComponent implements ControlValueAccessor {
   model!: string;
@@ -231,15 +226,14 @@ export class InnerNameComponent implements ControlValueAccessor {
 }
 
 @Component({
-  selector: 'nas-ng-model-custom-wrapper',
-  standalone: true,
-  imports: [CommonModule, NasModelModule, InnerNameComponent],
-  template: `
+    selector: 'nas-ng-model-custom-wrapper',
+    imports: [CommonModule, NasModelModule, InnerNameComponent],
+    template: `
     <nas-inner-name
       [nasModel]="store('name')"
       [disabled]="store('isDisabled').$ | async"
     />
-  `,
+  `
 })
 export class NameComponent extends StoreComponent<NameState> {
   constructor(store: NameStore) {
