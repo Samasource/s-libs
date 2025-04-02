@@ -22,7 +22,7 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "@sama/*": ["./dist/*"]
+      "@sama/*": ["./dist/*", "./projects/*"]
     },
     "lib": ["ES2022", "dom"],
 
