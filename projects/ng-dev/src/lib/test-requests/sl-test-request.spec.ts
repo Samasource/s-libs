@@ -6,7 +6,7 @@ import {
   provideHttpClient,
 } from '@angular/common/http';
 import { TestRequest } from '@angular/common/http/testing';
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { Subject } from 'rxjs';
 import { AngularContext } from '../angular-context';
 import { expectSingleCallAndReset } from '../spies';

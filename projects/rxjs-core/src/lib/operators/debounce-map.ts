@@ -1,5 +1,5 @@
-import { Deferred } from '@s-libs/js-core';
-import { bindKey, flow } from '@s-libs/micro-dash';
+import { Deferred } from '@sama/js-core';
+import { bindKey, flow } from '@sama/micro-dash';
 import { debounce, from, Observable, OperatorFunction } from 'rxjs';
 import { finalize, switchMap } from 'rxjs/operators';
 

@@ -2,7 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, Directive, Injectable } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ComponentContext, expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { ComponentContext, expectSingleCallAndReset } from '@sama/ng-dev';
 import { Subject } from 'rxjs';
 import {
   InjectableSuperclass,

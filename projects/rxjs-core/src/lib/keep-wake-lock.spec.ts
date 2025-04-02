@@ -4,7 +4,7 @@ import {
   expectSingleCallAndReset,
   IsPageVisibleHarness,
   TestCall,
-} from '@s-libs/ng-dev';
+} from '@sama/ng-dev';
 import {
   ExtendedNavigator,
   keepWakeLock$,

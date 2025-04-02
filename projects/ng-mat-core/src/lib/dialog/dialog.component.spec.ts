@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularContext } from '@s-libs/ng-dev';
+import { AngularContext } from '@sama/ng-dev';
 import {
   DEFAULT_OK_VALUE,
   DialogData,

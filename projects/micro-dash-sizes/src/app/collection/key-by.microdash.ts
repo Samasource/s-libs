@@ -1,4 +1,4 @@
-import { keyBy } from '@s-libs/micro-dash';
+import { keyBy } from '@sama/micro-dash';
 
 keyBy([], () => 'a');
 keyBy({}, () => 'a');

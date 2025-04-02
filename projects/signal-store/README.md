@@ -1,4 +1,4 @@
-A state management library build on Angular signals. An API inspired by [`app-state`](https://github.com/simontonsoftware/s-libs/tree/master/projects/app-state) allows you to directly read, write and observe any part of your state without writing any selectors, actions, or reducers. Directly bind any part of the store using `[(ngModel)]`.
+A state management library build on Angular signals. An API inspired by [`app-state`](https://github.com/Samasource/s-libs/tree/master/projects/app-state) allows you to directly read, write and observe any part of your state without writing any selectors, actions, or reducers. Directly bind any part of the store using `[(ngModel)]`.
 
 ## API Documentation
 
@@ -25,7 +25,7 @@ A basic idea behind this library is to keep all the state of your app in one pla
 Install along with its peer dependencies using:
 
 ```shell script
-npm install @s-libs/signal-store @s-libs/js-core @s-libs/micro-dash
+npm install @sama/signal-store @sama/js-core @sama/micro-dash
 ```
 
 ## Setup
@@ -58,7 +58,7 @@ Then create a subclass of `RootStore`. A single instance of that class will serv
 // state/my-store.ts
 
 import { Injectable } from "@angular/core";
-import { RootStore } from "@s-libs/signal-store";
+import { RootStore } from "@sama/signal-store";
 import { MyState } from "./my-state";
 
 @Injectable({ providedIn: "root" })

@@ -1,3 +1,3 @@
-import { bindKey } from '@s-libs/micro-dash';
+import { bindKey } from '@sama/micro-dash';
 
 bindKey({ fn() {} }, 'fn')();

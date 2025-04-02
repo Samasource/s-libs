@@ -5,8 +5,8 @@ import {
   FormsModule,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
-import { RootStore } from '@s-libs/app-state';
-import { noop } from '@s-libs/micro-dash';
+import { RootStore } from '@sama/app-state';
+import { noop } from '@sama/micro-dash';
 import { NasModelModule } from '../lib/nas-model.module';
 
 /* eslint-disable @typescript-eslint/no-useless-constructor -- this file does injection in funny ways */

@@ -1,3 +1,3 @@
-import { flatten } from '@s-libs/micro-dash';
+import { flatten } from '@sama/micro-dash';
 
 flatten([]);

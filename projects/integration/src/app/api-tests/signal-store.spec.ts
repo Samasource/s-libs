@@ -4,8 +4,8 @@ import {
   Store,
   spreadArrayStore,
   pushToArrayStore,
-} from '@s-libs/signal-store';
-import { staticTest } from '@s-libs/ng-dev';
+} from '@sama/signal-store';
+import { staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 
 describe('signal-store', () => {

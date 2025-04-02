@@ -2,7 +2,7 @@ Here is a basic example to set up theming for Angular Material, with both light 
 
 ```scss
 @use "@angular/material" as mat;
-@use "@s-libs/ng-mat-core/theming";
+@use "@sama/ng-mat-core/theming";
 
 @include theming.full-theming(
   $dark-palettes: (
@@ -20,7 +20,7 @@ If you only want one theme, that is possible.
 
 ```scss
 @use "@angular/material" as mat;
-@use "@s-libs/ng-mat-core/theming";
+@use "@sama/ng-mat-core/theming";
 
 @include mat.core(); // needed when you don't use the `full-theming` mixin
 @include theming.light-theme(
@@ -39,7 +39,7 @@ This also demonstrates restricting the emitted styles to only the components you
 
 ```scss
 @use "@angular/material" as mat;
-@use "@s-libs/ng-mat-core/theming";
+@use "@sama/ng-mat-core/theming";
 
 $main-palettes: (
   primary: mat.define-palette(mat.$blue-grey-palette, 600, 300, 800, 500),

@@ -1,5 +1,5 @@
 import { noop } from 'lodash';
-import { expectCallsAndReset, expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { expectCallsAndReset, expectSingleCallAndReset } from '@sama/ng-dev';
 import { forOwnRight } from './for-own-right';
 
 describe('forOwnRight()', () => {

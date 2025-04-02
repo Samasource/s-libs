@@ -1,5 +1,5 @@
-import { isDefined } from '@s-libs/js-core';
-import { expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { isDefined } from '@sama/js-core';
+import { expectSingleCallAndReset } from '@sama/ng-dev';
 import { of, Subject, throwError } from 'rxjs';
 import {
   mixInSubscriptionManager,

@@ -1,3 +1,3 @@
-import { toLower } from '@s-libs/micro-dash';
+import { toLower } from '@sama/micro-dash';
 
 toLower('a string');

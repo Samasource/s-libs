@@ -1,4 +1,4 @@
-import { expectCallsAndReset } from '@s-libs/ng-dev';
+import { expectCallsAndReset } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { EmptyObject } from '../interfaces';
 import { mapAsKeys } from './map-as-keys';

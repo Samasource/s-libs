@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, Input, OnChanges } from '@angular/core';
-import { ComponentContext, staticTest } from '@s-libs/ng-dev';
+import { ComponentContext, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { Observable } from 'rxjs';
 import { RootStore, Store } from '../index';

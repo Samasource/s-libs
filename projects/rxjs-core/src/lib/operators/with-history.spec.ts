@@ -1,4 +1,4 @@
-import { marbleTest, staticTest } from '@s-libs/ng-dev';
+import { marbleTest, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { Observable, of } from 'rxjs';
 import {

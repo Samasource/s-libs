@@ -5,6 +5,6 @@ To quickly see what is available, see the [api documentation](https://simontonso
 ## Installation
 
 ```
-npm install @s-libs/ng-core @s-libs/rxjs-core @s-libs/js-core @s-libs/micro-dash @angular/cdk
-npm install --save-dev @s-libs/ng-dev
+npm install @sama/ng-core @sama/rxjs-core @sama/js-core @sama/micro-dash @angular/cdk
+npm install --save-dev @sama/ng-dev
 ```

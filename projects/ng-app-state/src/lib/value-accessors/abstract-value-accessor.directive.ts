@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Injector } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 
 @Directive()
 export abstract class AbstractValueAccessorDirective<T extends HTMLElement>

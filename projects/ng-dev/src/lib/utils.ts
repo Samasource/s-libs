@@ -1,4 +1,4 @@
-import { isDefined } from '@s-libs/js-core';
+import { isDefined } from '@sama/js-core';
 
 export function buildErrorMessage({
   matchType,

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RootStore } from '@s-libs/app-state';
+import { RootStore } from '@sama/app-state';
 import { unsubscribe } from '../../../../../app-state/src/performance/performance-utils';
 import {
   runWide,

@@ -1,3 +1,3 @@
-import { groupBy } from '@s-libs/micro-dash';
+import { groupBy } from '@sama/micro-dash';
 
 console.log(groupBy([1, 2, 3], () => 'a'));

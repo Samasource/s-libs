@@ -1,4 +1,4 @@
-import { reduceRight } from '@s-libs/micro-dash';
+import { reduceRight } from '@sama/micro-dash';
 
 console.log(
   reduceRight([], () => 1),

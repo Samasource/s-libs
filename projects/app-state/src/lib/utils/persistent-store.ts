@@ -1,9 +1,5 @@
-import {
-  MigrationManager,
-  Persistence,
-  VersionedObject,
-} from '@s-libs/js-core';
-import { identity } from '@s-libs/micro-dash';
+import { MigrationManager, Persistence, VersionedObject } from '@sama/js-core';
+import { identity } from '@sama/micro-dash';
 import { skip } from 'rxjs/operators';
 import { RootStore } from '../index';
 

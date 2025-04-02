@@ -4,7 +4,7 @@ import {
   SlDialogHarness,
   SlDialogModule,
   SlDialogService,
-} from '@s-libs/ng-mat-core';
+} from '@sama/ng-mat-core';
 
 describe('ng-mat-core', () => {
   it('has matButtonHarnessWithIcon', () => {

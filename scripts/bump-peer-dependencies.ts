@@ -10,7 +10,7 @@ async function run(): Promise<void> {
     const packageJson = JSON.parse(readFileSync(path).toString());
     const version = `^${packageJson.version}`;
     for (const dependency of libraries) {
-      const key = `@s-libs/${dependency}`;
+      const key = `@sama/${dependency}`;
       if (packageJson.peerDependencies?.[key]) {
         packageJson.peerDependencies[key] = version;
       }

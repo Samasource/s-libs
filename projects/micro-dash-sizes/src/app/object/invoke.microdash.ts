@@ -1,4 +1,4 @@
-import { invoke } from '@s-libs/micro-dash';
+import { invoke } from '@sama/micro-dash';
 
 invoke(
   {

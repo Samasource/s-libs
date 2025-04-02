@@ -1,5 +1,5 @@
 import { ErrorHandler, Injectable, Provider } from '@angular/core';
-import { isRegExp, isString, isUndefined, remove } from '@s-libs/micro-dash';
+import { isRegExp, isString, isUndefined, remove } from '@sama/micro-dash';
 import { buildErrorMessage } from '../utils';
 
 type ErrorType = Parameters<ErrorHandler['handleError']>[0];

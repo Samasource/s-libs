@@ -1,4 +1,4 @@
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { InnerState, TestState } from '../test-helpers/test-state';
 import { RootStore } from './index';
 

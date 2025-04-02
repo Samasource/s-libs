@@ -1,4 +1,4 @@
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { expectTypeOf } from 'expect-type';
 import { of } from 'rxjs';
 import { concatMap, delay, throttleTime } from 'rxjs/operators';

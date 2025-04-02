@@ -11,8 +11,8 @@ import {
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
-import { assert } from '@s-libs/js-core';
-import { keys } from '@s-libs/micro-dash';
+import { assert } from '@sama/js-core';
+import { keys } from '@sama/micro-dash';
 import {
   AngularContext,
   extendMetadata,

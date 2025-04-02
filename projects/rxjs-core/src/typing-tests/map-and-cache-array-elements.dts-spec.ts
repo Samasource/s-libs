@@ -1,4 +1,4 @@
-import { identity } from '@s-libs/micro-dash';
+import { identity } from '@sama/micro-dash';
 import { Subject } from 'rxjs';
 import { mapAndCacheArrayElements } from '../lib/operators';
 

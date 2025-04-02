@@ -1,4 +1,4 @@
-import { isTruthy } from '@s-libs/js-core';
+import { isTruthy } from '@sama/js-core';
 import { Observable } from 'rxjs';
 import { filter, finalize, switchMap } from 'rxjs/operators';
 import { isPageVisible$ } from './is-page-visible';

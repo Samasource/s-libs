@@ -1,7 +1,7 @@
 import { HarnessEnvironment } from '@angular/cdk/testing';
 import { UnitTestElement } from '@angular/cdk/testing/testbed';
 import { flush } from '@angular/core/testing';
-import { bindKey } from '@s-libs/micro-dash';
+import { bindKey } from '@sama/micro-dash';
 import { AngularContext } from './angular-context';
 
 export class FakeAsyncHarnessEnvironment extends HarnessEnvironment<Element> {

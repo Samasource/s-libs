@@ -4,7 +4,7 @@ import { sortedIndex } from './sorted-index';
 
 describe('sortedIndex()', () => {
   it('can find the end of the array (production bug)', () => {
-    // https://github.com/simontonsoftware/s-libs/issues/106
+    // https://github.com/Samasource/s-libs/issues/106
 
     expect(sortedIndex([], 1)).toBe(0);
     expect(sortedIndex([0], 1)).toBe(1);

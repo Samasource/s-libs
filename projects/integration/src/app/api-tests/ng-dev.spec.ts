@@ -13,7 +13,7 @@ import {
   SlTestRequest,
   staticTest,
   TestCall,
-} from '@s-libs/ng-dev';
+} from '@sama/ng-dev';
 
 describe('ng-dev', () => {
   it('has AngularContext', () => {

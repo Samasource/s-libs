@@ -10,9 +10,9 @@ import {
 } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { RootStore, Store } from '@s-libs/app-state';
-import { noop } from '@s-libs/micro-dash';
-import { ComponentContext } from '@s-libs/ng-dev';
+import { RootStore, Store } from '@sama/app-state';
+import { noop } from '@sama/micro-dash';
+import { ComponentContext } from '@sama/ng-dev';
 import { Subject } from 'rxjs';
 import { setValue } from '../../../ng-core/src/test-helpers';
 import {

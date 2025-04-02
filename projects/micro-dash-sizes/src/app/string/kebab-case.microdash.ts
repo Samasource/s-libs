@@ -1,3 +1,3 @@
-import { kebabCase } from '@s-libs/micro-dash';
+import { kebabCase } from '@sama/micro-dash';
 
 kebabCase('a string');

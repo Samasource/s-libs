@@ -1,4 +1,4 @@
-import { cloneDeep } from '@s-libs/micro-dash';
+import { cloneDeep } from '@sama/micro-dash';
 
 cloneDeep('a');
 cloneDeep({});

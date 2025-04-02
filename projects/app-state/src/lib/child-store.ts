@@ -1,4 +1,4 @@
-import { clone, isUndefined, omit } from '@s-libs/micro-dash';
+import { clone, isUndefined, omit } from '@sama/micro-dash';
 import { RootStore, Store } from './index';
 
 /* eslint-disable @typescript-eslint/no-unsafe-return,@typescript-eslint/explicit-module-boundary-types */

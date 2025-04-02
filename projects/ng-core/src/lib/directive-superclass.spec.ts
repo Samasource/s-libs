@@ -12,12 +12,12 @@ import {
 } from '@angular/core';
 import { ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { isDefined, isFalsy } from '@s-libs/js-core';
+import { isDefined, isFalsy } from '@sama/js-core';
 import {
   AngularContext,
   ComponentContext,
   expectSingleCallAndReset,
-} from '@s-libs/ng-dev';
+} from '@sama/ng-dev';
 import { BehaviorSubject, combineLatest, noop, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { click, find, findButton } from '../test-helpers';
@@ -195,7 +195,7 @@ describe('DirectiveSuperclass', () => {
       });
     });
 
-    // https://github.com/simontonsoftware/s-libs/issues/14
+    // https://github.com/Samasource/s-libs/issues/14
     it('does not emit until ngOnChanges is called', () => {
       @Component({ standalone: true, template: '' })
       class StageTrackingComponent

@@ -1,4 +1,4 @@
-import { Deferred } from '@s-libs/js-core';
+import { Deferred } from '@sama/js-core';
 import { AngularContext } from '../angular-context';
 import { ResolveType } from '../interfaces';
 

@@ -1,4 +1,4 @@
-import { isFunction } from '@s-libs/micro-dash';
+import { isFunction } from '@sama/micro-dash';
 
 console.log(
   isFunction('a'),

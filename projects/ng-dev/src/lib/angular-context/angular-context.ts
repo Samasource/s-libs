@@ -18,8 +18,8 @@ import {
   TestModuleMetadata,
   tick,
 } from '@angular/core/testing';
-import { assert, convertTime } from '@s-libs/js-core';
-import { forOwn, isUndefined } from '@s-libs/micro-dash';
+import { assert, convertTime } from '@sama/js-core';
+import { forOwn, isUndefined } from '@sama/micro-dash';
 import { MockErrorHandler } from '../mock-error-handler/mock-error-handler';
 import { FakeAsyncHarnessEnvironment } from './fake-async-harness-environment';
 
@@ -213,7 +213,7 @@ export class AngularContext {
   /**
    * Advance time and trigger change detection. It is common to call this with no arguments to trigger change detection without advancing time.
    *
-   * @param unit The unit of time `amount` represents. Accepts anything described in `@s-libs/s-core`'s [TimeUnit]{@linkcode https://simontonsoftware.github.io/s-js-utils/typedoc/enums/timeunit.html} enum.
+   * @param unit The unit of time `amount` represents. Accepts anything described in `@sama/s-core`'s [TimeUnit]{@linkcode https://simontonsoftware.github.io/s-js-utils/typedoc/enums/timeunit.html} enum.
    */
   tick(amount = 0, unit = 'ms'): void {
     if (!this.#isRunning) {

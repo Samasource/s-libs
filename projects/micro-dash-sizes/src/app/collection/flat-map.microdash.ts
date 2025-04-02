@@ -1,4 +1,4 @@
-import { flatMap } from '@s-libs/micro-dash';
+import { flatMap } from '@sama/micro-dash';
 
 console.log(
   flatMap([1, 2, 3], (n) => [n, n]),

@@ -1,3 +1,3 @@
-import { remove } from '@s-libs/micro-dash';
+import { remove } from '@sama/micro-dash';
 
 remove([1], () => true);

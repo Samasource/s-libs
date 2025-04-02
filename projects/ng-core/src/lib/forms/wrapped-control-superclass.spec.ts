@@ -15,10 +15,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { RootStore } from '@s-libs/app-state';
-import { keys, omit } from '@s-libs/micro-dash';
-import { NasModelModule } from '@s-libs/ng-app-state';
-import { ComponentContext, expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { RootStore } from '@sama/app-state';
+import { keys, omit } from '@sama/micro-dash';
+import { NasModelModule } from '@sama/ng-app-state';
+import { ComponentContext, expectSingleCallAndReset } from '@sama/ng-dev';
 import { EMPTY, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import {
@@ -359,7 +359,7 @@ describe('WrappedControlSuperclass', () => {
       });
 
       it('syncs with all types of NgControls (production bug)', () => {
-        // It was not syncing properly with `FormControlName`: https://github.com/simontonsoftware/s-libs/issues/82
+        // It was not syncing properly with `FormControlName`: https://github.com/Samasource/s-libs/issues/82
 
         @Component({
           selector: 'sl-inner',
@@ -486,7 +486,7 @@ describe('WrappedControlSuperclass', () => {
     });
 
     it('works for the multiple inner components one', () => {
-      // The idea for being able to wrap a form group came from github user A77AY: https://github.com/simontonsoftware/s-libs/pull/52
+      // The idea for being able to wrap a form group came from github user A77AY: https://github.com/Samasource/s-libs/pull/52
 
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv begin example
       class FullName {

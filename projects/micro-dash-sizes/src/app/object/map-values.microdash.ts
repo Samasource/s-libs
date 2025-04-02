@@ -1,4 +1,4 @@
-import { mapValues } from '@s-libs/micro-dash';
+import { mapValues } from '@sama/micro-dash';
 
 console.log(
   mapValues({ a: 1 }, () => 1),

@@ -1,3 +1,3 @@
-import { pull } from '@s-libs/micro-dash';
+import { pull } from '@sama/micro-dash';
 
 pull([1], 1);

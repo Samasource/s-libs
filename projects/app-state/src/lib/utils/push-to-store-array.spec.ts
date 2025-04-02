@@ -1,7 +1,7 @@
 import { expectTypeOf } from 'expect-type';
 import { RootStore, Store } from '../index';
 import { pushToStoreArray } from './push-to-store-array';
-import { staticTest } from '@s-libs/ng-dev';
+import { staticTest } from '@sama/ng-dev';
 
 describe('pushToStoreArray', () => {
   let store: Store<number[]>;

@@ -1,4 +1,4 @@
-import { isUndefined } from '@s-libs/micro-dash';
+import { isUndefined } from '@sama/micro-dash';
 
 /**
  * Checks if `value` is anything other than `undefined`.

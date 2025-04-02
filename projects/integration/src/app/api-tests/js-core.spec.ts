@@ -33,8 +33,8 @@ import {
   WeakValueMap,
   wrapFunction,
   wrapMethod,
-} from '@s-libs/js-core';
-import { staticTest } from '@s-libs/ng-dev';
+} from '@sama/js-core';
+import { staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 
 describe('js-core', () => {

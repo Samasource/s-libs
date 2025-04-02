@@ -1,2 +1,2 @@
-import { size } from '@s-libs/micro-dash';
+import { size } from '@sama/micro-dash';
 console.log(size([1, 2]), size({ a: 1, b: 2 }), size('hi'));

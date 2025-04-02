@@ -1,4 +1,4 @@
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { wrapFunction } from '../public-api';
 
 class O {

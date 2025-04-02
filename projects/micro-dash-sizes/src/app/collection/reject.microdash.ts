@@ -1,4 +1,4 @@
-import { reject } from '@s-libs/micro-dash';
+import { reject } from '@sama/micro-dash';
 
 console.log(
   reject([1], () => true),

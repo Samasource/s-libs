@@ -1,3 +1,3 @@
-import { range } from '@s-libs/micro-dash';
+import { range } from '@sama/micro-dash';
 
 console.log(range(2));

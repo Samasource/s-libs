@@ -1,5 +1,5 @@
-import { Deferred } from '@s-libs/js-core';
-import { isEqual, isUndefined, nth, remove } from '@s-libs/micro-dash';
+import { Deferred } from '@sama/js-core';
+import { isEqual, isUndefined, nth, remove } from '@sama/micro-dash';
 import { buildErrorMessage } from '../utils';
 import { TestCall } from './test-call';
 

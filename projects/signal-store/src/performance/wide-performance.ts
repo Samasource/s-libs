@@ -1,5 +1,5 @@
 import { effect, Injector } from '@angular/core';
-import { times } from '@s-libs/micro-dash';
+import { times } from '@sama/micro-dash';
 import { Store } from '../lib/store';
 import { CounterState } from './counter-state';
 

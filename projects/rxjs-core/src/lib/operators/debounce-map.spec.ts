@@ -1,12 +1,12 @@
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { HttpTestingController } from '@angular/common/http/testing';
 import { fakeAsync, tick } from '@angular/core/testing';
-import { Deferred } from '@s-libs/js-core';
+import { Deferred } from '@sama/js-core';
 import {
   AngularContext,
   expectRequest,
   expectSingleCallAndReset,
-} from '@s-libs/ng-dev';
+} from '@sama/ng-dev';
 import { BehaviorSubject, of, Subject } from 'rxjs';
 import {
   testCompletionPropagation,

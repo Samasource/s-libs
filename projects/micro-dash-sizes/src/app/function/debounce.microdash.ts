@@ -1,4 +1,4 @@
-import { debounce } from '@s-libs/micro-dash';
+import { debounce } from '@sama/micro-dash';
 
 debounce(() => {})();
 debounce((value: number) => {

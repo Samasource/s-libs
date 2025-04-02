@@ -1,5 +1,5 @@
 import { computed, Signal } from '@angular/core';
-import { clone } from '@s-libs/micro-dash';
+import { clone } from '@sama/micro-dash';
 import { AbstractStore } from './abstract-store';
 import { Store } from './store';
 

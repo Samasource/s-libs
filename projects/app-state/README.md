@@ -11,7 +11,7 @@ A basic idea behind this library is to keep all the state of your app in one pla
 - Components no longer need multiple inputs and outputs to route state and mutations to the proper components. Instead they can obtain the store via dependency injection.
 - During debugging, you can look in one place to see the state of your entire app. Moreover, development tools can be used to see this information at a glance along with a full history of changes leading up to the current state ([Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)).
 - The objects in the store are immutable (as long as you only modify the state via the store, as you should), which enables more benefits:
-  - Immutable objects allow efficient comparison using `===` to determine if they changed. Note that if you are using Angular this enables on-push change detection, but you should consider the newer [`signal-store`](https://github.com/simontonsoftware/s-libs/tree/master/projects/signal-store) instead!
+  - Immutable objects allow efficient comparison using `===` to determine if they changed. Note that if you are using Angular this enables on-push change detection, but you should consider the newer [`signal-store`](https://github.com/Samasource/s-libs/tree/master/projects/signal-store) instead!
   - Undo/redo features become very simple. This library includes a helper to make it even easier (more info below).
 - Every piece of state is observable. You can subscribe to the root of the store to get notified of every state change anywhere in the app, a specific boolean buried deep within your state, or anywhere in between.
 
@@ -25,7 +25,7 @@ A basic idea behind this library is to keep all the state of your app in one pla
 Install along with its peer dependencies using:
 
 ```shell script
-npm install @s-libs/app-state @s-libs/ng-core @s-libs/rxjs-core @s-libs/js-core @s-libs/micro-dash
+npm install @sama/app-state @sama/ng-core @sama/rxjs-core @sama/js-core @sama/micro-dash
 ```
 
 ## Setup
@@ -57,7 +57,7 @@ Then create a subclass of `RootStore`. A single instance of that class will serv
 ```ts
 // state/my-store.ts
 
-import { RootStore } from "@s-libs/app-state";
+import { RootStore } from "@sama/app-state";
 import { MyState } from "./my-state";
 
 export class MyStore extends RootStore<MyState> {

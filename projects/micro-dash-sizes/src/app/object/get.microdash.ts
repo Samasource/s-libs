@@ -1,3 +1,3 @@
-import { get } from '@s-libs/micro-dash';
+import { get } from '@sama/micro-dash';
 
 get({ a: 1 }, ['a'], 0);

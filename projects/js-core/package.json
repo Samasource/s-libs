@@ -1,15 +1,19 @@
 {
-  "name": "@s-libs/js-core",
+  "name": "@sama/js-core",
   "version": "18.0.0",
-  "author": "Simonton Software",
+  "author": "Samasource",
   "license": "MIT",
-  "homepage": "https://github.com/simontonsoftware/s-libs/tree/master/projects/js-core",
+  "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/js-core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simontonsoftware/s-libs.git",
+    "url": "https://github.com/Samasource/s-libs.git",
     "directory": "projects/js-core"
   },
-  "peerDependencies": { "@s-libs/micro-dash": "^18.0.0" },
-  "dependencies": { "tslib": "^2.3.0" },
+  "peerDependencies": {
+    "@sama/micro-dash": "^18.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
   "sideEffects": false
 }

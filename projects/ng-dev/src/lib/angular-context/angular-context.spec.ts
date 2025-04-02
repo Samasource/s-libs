@@ -18,7 +18,7 @@ import { flush, TestBed, tick } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSnackBarHarness } from '@angular/material/snack-bar/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { sleep } from '@s-libs/js-core';
+import { sleep } from '@sama/js-core';
 import { noop, Observable } from 'rxjs';
 import { ComponentContext } from '../component-context';
 import { MockErrorHandler } from '../mock-error-handler/mock-error-handler';

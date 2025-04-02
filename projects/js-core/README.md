@@ -7,5 +7,5 @@ To quickly see what is available, see the [api documentation](https://simontonso
 Install along with its peer dependencies using:
 
 ```shell script
-npm install @s-libs/js-core @s-libs/micro-dash
+npm install @sama/js-core @sama/micro-dash
 ```

@@ -1,3 +1,3 @@
-import { difference } from '@s-libs/micro-dash';
+import { difference } from '@sama/micro-dash';
 
 console.log(difference([1, 2], [1]));

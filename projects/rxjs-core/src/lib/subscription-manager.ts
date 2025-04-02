@@ -1,4 +1,4 @@
-import { Constructor } from '@s-libs/js-core';
+import { Constructor } from '@sama/js-core';
 import { Observable, Subscription, Unsubscribable } from 'rxjs';
 
 /**

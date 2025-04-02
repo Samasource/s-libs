@@ -1,4 +1,4 @@
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { staticTest } from './static-test';
 
 let curSpec!: jasmine.SpecResult;

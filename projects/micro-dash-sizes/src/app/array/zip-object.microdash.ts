@@ -1,3 +1,3 @@
-import { zipObject } from '@s-libs/micro-dash';
+import { zipObject } from '@sama/micro-dash';
 
 console.log(zipObject(['a'], [1]));
