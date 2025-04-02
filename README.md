@@ -1,5 +1,3 @@
-[![Test Suite](https://github.com/Samasource/s-libs/workflows/Test%20Suite/badge.svg)](https://github.com/Samasource/s-libs/actions)
-
 # S-Libs
 
 This is a collection of libraries from Simonton Software, written in TypeScript for use in any modern javascript buildchain.
