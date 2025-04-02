@@ -1,3 +1,3 @@
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 
 console.log(noop, [1].map(noop));

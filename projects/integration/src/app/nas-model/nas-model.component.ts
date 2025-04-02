@@ -1,9 +1,9 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { mapToObject } from '@s-libs/js-core';
-import { forEach, padStart } from '@s-libs/micro-dash';
-import { NasModelModule } from '@s-libs/ng-app-state';
+import { mapToObject } from '@sama/js-core';
+import { forEach, padStart } from '@sama/micro-dash';
+import { NasModelModule } from '@sama/ng-app-state';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { City, NasModelState } from './nas-model-state';

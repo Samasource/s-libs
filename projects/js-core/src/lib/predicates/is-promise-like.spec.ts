@@ -1,4 +1,4 @@
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { getArguments } from '../../test-helpers/test-utils';
 import { isPromiseLike } from './is-promise-like';
 

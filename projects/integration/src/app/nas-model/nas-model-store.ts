@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RootStore } from '@s-libs/app-state';
-import { logToReduxDevtoolsExtension } from '@s-libs/rxjs-core';
+import { RootStore } from '@sama/app-state';
+import { logToReduxDevtoolsExtension } from '@sama/rxjs-core';
 import { NasModelState } from './nas-model-state';
 
 @Injectable({ providedIn: 'root' })

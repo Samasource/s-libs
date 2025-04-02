@@ -1,4 +1,4 @@
-import { expectSingleCallAndReset, IsPageVisibleHarness } from '@s-libs/ng-dev';
+import { expectSingleCallAndReset, IsPageVisibleHarness } from '@sama/ng-dev';
 import { isPageVisible$ } from './is-page-visible';
 
 describe('isPageVisible$()', () => {

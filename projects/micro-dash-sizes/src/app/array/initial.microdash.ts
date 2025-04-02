@@ -1,3 +1,3 @@
-import { initial } from '@s-libs/micro-dash';
+import { initial } from '@sama/micro-dash';
 
 console.log(initial([1, 2]));

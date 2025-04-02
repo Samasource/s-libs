@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 import { CheckboxControlValueAccessor } from '@angular/forms';
-import { provideValueAccessor } from '@s-libs/ng-core';
+import { provideValueAccessor } from '@sama/ng-core';
 
 /** @hidden */
 @Directive({

@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { ComponentContext } from './component-context';
 
 describe('WrapperComponent', () => {
@@ -99,7 +99,7 @@ describe('WrapperComponent', () => {
     });
   });
 
-  // https://github.com/simontonsoftware/s-libs/issues/40
+  // https://github.com/Samasource/s-libs/issues/40
   it('can handle inputs defined by a superclass (production bug)', () => {
     // eslint-disable-next-line @angular-eslint/prefer-standalone
     @Directive()

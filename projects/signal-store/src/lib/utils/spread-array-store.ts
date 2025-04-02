@@ -1,5 +1,5 @@
 import { computed, Signal } from '@angular/core';
-import { times } from '@s-libs/micro-dash';
+import { times } from '@sama/micro-dash';
 import { ReadonlySlice, ReadonlyStore, Slice, Store } from '../store';
 
 /**

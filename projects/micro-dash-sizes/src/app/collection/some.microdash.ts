@@ -1,4 +1,4 @@
-import { some } from '@s-libs/micro-dash';
+import { some } from '@sama/micro-dash';
 
 console.log(
   some([1], () => true),

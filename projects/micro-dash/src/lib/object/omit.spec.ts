@@ -1,4 +1,4 @@
-import { staticTest } from '@s-libs/ng-dev';
+import { staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { EmptyObject } from '../interfaces';
 import { omit } from './';

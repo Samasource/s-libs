@@ -1,4 +1,4 @@
-import { transform } from '@s-libs/micro-dash';
+import { transform } from '@sama/micro-dash';
 import {
   ArrayIteratee,
   Prettify,

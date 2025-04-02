@@ -7,7 +7,7 @@ import {
   provideEagerLoading,
   provideValueAccessor,
   WrappedControlSuperclass,
-} from '@s-libs/ng-core';
+} from '@sama/ng-core';
 
 describe('ng-core', () => {
   it('has DirectiveSuperclass', () => {

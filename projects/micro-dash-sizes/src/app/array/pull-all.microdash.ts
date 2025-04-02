@@ -1,3 +1,3 @@
-import { pullAll } from '@s-libs/micro-dash';
+import { pullAll } from '@sama/micro-dash';
 
 console.log(pullAll([1], [1]));

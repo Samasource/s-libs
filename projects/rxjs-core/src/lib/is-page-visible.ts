@@ -14,7 +14,7 @@ import { map, startWith } from 'rxjs/operators';
  * });
  * ```
  *
- * Note that for Angular projects, there is a harness available to help with tests that use this function in `@s-libs/ng-dev`.
+ * Note that for Angular projects, there is a harness available to help with tests that use this function in `@sama/ng-dev`.
  */
 export function isPageVisible$(): Observable<boolean> {
   return fromEvent(document, 'visibilitychange').pipe(

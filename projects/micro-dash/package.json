@@ -1,15 +1,17 @@
 {
-  "name": "@s-libs/micro-dash",
+  "name": "@sama/micro-dash",
   "version": "18.0.0",
   "description": "Lightweight implementations of simplified lodash functions",
-  "author": "Simonton Software",
+  "author": "Samasource",
   "license": "MIT",
-  "homepage": "https://github.com/simontonsoftware/s-libs/tree/master/projects/micro-dash",
+  "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/micro-dash",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simontonsoftware/s-libs.git",
+    "url": "https://github.com/Samasource/s-libs.git",
     "directory": "projects/micro-dash"
   },
-  "dependencies": { "tslib": "^2.3.0" },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
   "sideEffects": false
 }

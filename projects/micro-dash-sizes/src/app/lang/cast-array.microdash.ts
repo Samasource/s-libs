@@ -1,3 +1,3 @@
-import { castArray } from '@s-libs/micro-dash';
+import { castArray } from '@sama/micro-dash';
 
 console.log(castArray(1), castArray([1]));

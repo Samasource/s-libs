@@ -1,6 +1,6 @@
 import { fakeAsync, tick } from '@angular/core/testing';
-import { isEqual } from '@s-libs/micro-dash';
-import { expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { isEqual } from '@sama/micro-dash';
+import { expectSingleCallAndReset } from '@sama/ng-dev';
 import { RootStore } from '../index';
 import { UndoManager, UndoOrRedo } from './undo-manager';
 

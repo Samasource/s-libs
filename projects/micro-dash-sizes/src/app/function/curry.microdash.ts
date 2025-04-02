@@ -1,3 +1,3 @@
-import { curry } from '@s-libs/micro-dash';
+import { curry } from '@sama/micro-dash';
 
 curry(() => 1)();

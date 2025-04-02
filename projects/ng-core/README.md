@@ -7,5 +7,5 @@ To quickly see what is available, see the [api documentation](https://simontonso
 Install along with its peer dependencies using:
 
 ```shell script
-npm install @s-libs/ng-core @s-libs/rxjs-core @s-libs/js-core @s-libs/micro-dash
+npm install @sama/ng-core @sama/rxjs-core @sama/js-core @sama/micro-dash
 ```

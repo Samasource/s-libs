@@ -1,3 +1,3 @@
-import { isRegExp } from '@s-libs/micro-dash';
+import { isRegExp } from '@sama/micro-dash';
 
 console.log(isRegExp('a'), isRegExp(/a/u));

@@ -6,7 +6,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { COMPOSITION_BUFFER_MODE, DefaultValueAccessor } from '@angular/forms';
-import { provideValueAccessor } from '@s-libs/ng-core';
+import { provideValueAccessor } from '@sama/ng-core';
 
 /** @hidden */
 @Directive({

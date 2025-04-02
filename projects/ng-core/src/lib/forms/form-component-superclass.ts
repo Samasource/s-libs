@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, inject } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { DirectiveSuperclass } from '../directive-superclass';
 
 /**

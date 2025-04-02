@@ -7,8 +7,8 @@ import {
   ProviderToken,
 } from '@angular/core';
 import { AbstractControl, NgControl, ValidationErrors } from '@angular/forms';
-import { wrapMethod } from '@s-libs/js-core';
-import { bindKey, flow } from '@s-libs/micro-dash';
+import { wrapMethod } from '@sama/js-core';
+import { bindKey, flow } from '@sama/micro-dash';
 import {
   MonoTypeOperatorFunction,
   Observable,
@@ -294,7 +294,7 @@ export abstract class WrappedControlSuperclass<OuterType, InnerType = OuterType>
   }
 
   async #bindValidation(): Promise<void> {
-    // Hack-fixing a production bug: https://github.com/simontonsoftware/s-libs/issues/82. `ngModel` and `formControl` both set their `.control` before this component is initialized. However, `formControlName` does not. This is a timing hack to accommodate by delaying on the microtask queue.
+    // Hack-fixing a production bug: https://github.com/Samasource/s-libs/issues/82. `ngModel` and `formControl` both set their `.control` before this component is initialized. However, `formControlName` does not. This is a timing hack to accommodate by delaying on the microtask queue.
     await Promise.resolve();
 
     const outerControl = this.#selfInject(NgControl)?.control;

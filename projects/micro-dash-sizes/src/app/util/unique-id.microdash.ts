@@ -1,4 +1,4 @@
-import { uniqueId } from '@s-libs/micro-dash';
+import { uniqueId } from '@sama/micro-dash';
 
 console.log(uniqueId());
 console.log(uniqueId('a'));

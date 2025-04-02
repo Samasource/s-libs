@@ -1,3 +1,3 @@
-import { union } from '@s-libs/micro-dash';
+import { union } from '@sama/micro-dash';
 
 console.log(union([1], [2]));

@@ -1,4 +1,4 @@
-import { expectCallsAndReset, staticTest } from '@s-libs/ng-dev';
+import { expectCallsAndReset, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { identity } from 'lodash-es';
 import { EmptyObject } from '../interfaces';

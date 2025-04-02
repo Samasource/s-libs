@@ -1,4 +1,4 @@
-import { expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { expectSingleCallAndReset } from '@sama/ng-dev';
 import { wrapMethod } from './wrap-method';
 
 describe('wrapMethod()', () => {

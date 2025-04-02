@@ -1,3 +1,3 @@
-import { once } from '@s-libs/micro-dash';
+import { once } from '@sama/micro-dash';
 
 once(() => 1)();

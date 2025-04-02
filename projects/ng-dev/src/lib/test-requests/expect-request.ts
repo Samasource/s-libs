@@ -3,8 +3,8 @@ import {
   HttpTestingController,
   TestRequest,
 } from '@angular/common/http/testing';
-import { assert, mapAsKeys } from '@s-libs/js-core';
-import { isEqual } from '@s-libs/micro-dash';
+import { assert, mapAsKeys } from '@sama/js-core';
+import { isEqual } from '@sama/micro-dash';
 import { AngularContext } from '../angular-context';
 import { SlTestRequest } from './sl-test-request';
 

@@ -1,4 +1,4 @@
-import { NasModelModule } from '@s-libs/ng-app-state';
+import { NasModelModule } from '@sama/ng-app-state';
 
 describe('ng-app-state', () => {
   describe('public API', () => {

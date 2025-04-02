@@ -1,4 +1,4 @@
-import { isNil } from '@s-libs/micro-dash';
+import { isNil } from '@sama/micro-dash';
 
 /**
  * Get and put objects from/to local storage. They will be (de)serialized as JSON, so be sure that's OK for your objects.

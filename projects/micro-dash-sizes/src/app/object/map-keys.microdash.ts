@@ -1,4 +1,4 @@
-import { mapKeys } from '@s-libs/micro-dash';
+import { mapKeys } from '@sama/micro-dash';
 
 console.log(
   mapKeys([1], () => 1),

@@ -5,8 +5,8 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { isTruthy } from '@s-libs/js-core';
-import { delayOnMicrotaskQueue } from '@s-libs/rxjs-core';
+import { isTruthy } from '@sama/js-core';
+import { delayOnMicrotaskQueue } from '@sama/rxjs-core';
 import { BehaviorSubject, merge, Observable, of, Subject } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { InjectableSuperclass } from './injectable-superclass';

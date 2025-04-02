@@ -1,5 +1,5 @@
 import { Component, DoCheck } from '@angular/core';
-import { isPageVisible$ } from '@s-libs/rxjs-core';
+import { isPageVisible$ } from '@sama/rxjs-core';
 import { ComponentContext } from '../component-context';
 import { IsPageVisibleHarness } from './is-page-visible.harness';
 

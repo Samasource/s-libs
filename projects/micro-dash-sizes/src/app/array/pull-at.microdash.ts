@@ -1,4 +1,4 @@
-import { pullAt } from '@s-libs/micro-dash';
+import { pullAt } from '@sama/micro-dash';
 
 console.log(
   pullAt([1, 2, 3], 1),

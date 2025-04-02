@@ -1,3 +1,3 @@
-import { snakeCase } from '@s-libs/micro-dash';
+import { snakeCase } from '@sama/micro-dash';
 
 console.log(snakeCase('a string'));

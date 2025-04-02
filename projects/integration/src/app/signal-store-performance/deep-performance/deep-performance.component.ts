@@ -6,7 +6,7 @@ import {
   inject,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RootStore } from '@s-libs/signal-store';
+import { RootStore } from '@sama/signal-store';
 import {
   DeepState,
   runDeep,

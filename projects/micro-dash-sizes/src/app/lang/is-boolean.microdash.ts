@@ -1,3 +1,3 @@
-import { isBoolean } from '@s-libs/micro-dash';
+import { isBoolean } from '@sama/micro-dash';
 
 console.log(isBoolean(true), isBoolean({}));

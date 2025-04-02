@@ -5,7 +5,7 @@ import {
   EnvironmentInjector,
   inject,
 } from '@angular/core';
-import { RootStore } from '@s-libs/signal-store';
+import { RootStore } from '@sama/signal-store';
 import { unsubscribe } from '../../../../../signal-store/src/performance/performance-utils';
 import {
   runWide,

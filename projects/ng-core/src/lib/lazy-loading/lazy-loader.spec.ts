@@ -7,7 +7,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDialogHarness } from '@angular/material/dialog/testing';
-import { AngularContext, staticTest } from '@s-libs/ng-dev';
+import { AngularContext, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { LazyLoader } from './lazy-loader';
 import { provideEagerLoading } from './provide-eager-loading';

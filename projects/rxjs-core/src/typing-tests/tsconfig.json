@@ -11,8 +11,8 @@
 
     "baseUrl": "../lib",
     "paths": {
-      "@s-libs/js-core": ["../../../../dist/js-core"],
-      "@s-libs/micro-dash": ["../../../../dist/micro-dash"]
+      "@sama/js-core": ["../../../../dist/js-core"],
+      "@sama/micro-dash": ["../../../../dist/micro-dash"]
     }
   }
 }

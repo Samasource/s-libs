@@ -1,12 +1,12 @@
 {
-  "name": "@s-libs/eslint-config-ng",
+  "name": "@sama/eslint-config-ng",
   "version": "18.0.0",
-  "author": "Simonton Software",
+  "author": "Samasource",
   "license": "MIT",
-  "homepage": "https://github.com/simontonsoftware/s-libs/tree/master/projects/eslint-config-ng",
+  "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/eslint-config-ng",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simontonsoftware/s-libs.git",
+    "url": "https://github.com/Samasource/s-libs.git",
     "directory": "projects/eslint-config-ng"
   },
   "peerDependencies": {

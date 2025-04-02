@@ -1,4 +1,4 @@
-import { identity, isString } from '@s-libs/micro-dash';
+import { identity, isString } from '@sama/micro-dash';
 import { expectTypeOf } from 'expect-type';
 import { getArguments } from '../test-helpers/test-utils';
 import { assert } from './assert';

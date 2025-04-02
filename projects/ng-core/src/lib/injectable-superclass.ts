@@ -1,6 +1,6 @@
 import { DestroyRef, inject } from '@angular/core';
-import { Constructor } from '@s-libs/js-core';
-import { mixInSubscriptionManager } from '@s-libs/rxjs-core';
+import { Constructor } from '@sama/js-core';
+import { mixInSubscriptionManager } from '@sama/rxjs-core';
 import { Subject } from 'rxjs';
 
 /**

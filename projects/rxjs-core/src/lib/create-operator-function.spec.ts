@@ -1,5 +1,5 @@
-import { noop } from '@s-libs/micro-dash';
-import { marbleTest } from '@s-libs/ng-dev';
+import { noop } from '@sama/micro-dash';
+import { marbleTest } from '@sama/ng-dev';
 import { OperatorFunction, Subject } from 'rxjs';
 import {
   expectPipeResult,

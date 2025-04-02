@@ -1,3 +1,3 @@
-import { uniq } from '@s-libs/micro-dash';
+import { uniq } from '@sama/micro-dash';
 
 console.log(uniq([1]));

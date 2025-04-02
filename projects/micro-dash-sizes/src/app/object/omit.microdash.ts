@@ -1,3 +1,3 @@
-import { omit } from '@s-libs/micro-dash';
+import { omit } from '@sama/micro-dash';
 
 omit({ a: 1 }, 'a');

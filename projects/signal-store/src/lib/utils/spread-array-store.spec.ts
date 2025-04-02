@@ -1,6 +1,6 @@
 import { Component, effect, Input, OnChanges, Signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { ComponentContext, staticTest } from '@s-libs/ng-dev';
+import { ComponentContext, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { RootStore } from '../root-store';
 import { ReadonlyStore, Store } from '../store';

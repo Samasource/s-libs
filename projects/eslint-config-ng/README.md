@@ -6,13 +6,13 @@ Follow these instructions to get all the community-recommended config from [`ESL
 [`@typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts), and [`@angular-eslint`](https://github.com/angular-eslint/angular-eslint).
 
 1. First install [Angular ESLint](https://github.com/angular-eslint/angular-eslint), following their instructions for your situation. Make sure it is working with their default config.
-1. `npm install --save-dev @s-libs/eslint-config-ng`
+1. `npm install --save-dev @sama/eslint-config-ng`
 1. Change `eslint.config.js` in your root directory to this, and make adjustments to suit your needs:
 
    ```js
    // @ts-check
    const tseslint = require("typescript-eslint");
-   const slibs = require("@s-libs/eslint-config-ng");
+   const slibs = require("@sama/eslint-config-ng");
 
    module.exports = tseslint.config(...slibs, {
      files: ["**/*.ts"],
@@ -29,13 +29,13 @@ Use these instructions for much stricter linting, start with the instructions ab
 
 1. Follow the instructions above for recommended config and ensure it works.
 1. `npm install --save-dev eslint-config-prettier`
-1. Change the `require` in `eslint.config.js` to `@s-libs/eslint-config-ng/strict`
+1. Change the `require` in `eslint.config.js` to `@sama/eslint-config-ng/strict`
 1. Add `languageOptions` to the `eslint.config.js` file you created, so it looks like this:
 
    ```js
    // @ts-check
    const tseslint = require("typescript-eslint");
-   const slibs = require("@s-libs/eslint-config-ng/strict");
+   const slibs = require("@sama/eslint-config-ng/strict");
 
    module.exports = tseslint.config(...slibs, {
      files: ["**/*.ts"],

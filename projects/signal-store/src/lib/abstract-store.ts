@@ -1,6 +1,6 @@
 import { Signal } from '@angular/core';
-import { CallableObject, WeakValueMap } from '@s-libs/js-core';
-import { clone, every, isUndefined } from '@s-libs/micro-dash';
+import { CallableObject, WeakValueMap } from '@sama/js-core';
+import { clone, every, isUndefined } from '@sama/micro-dash';
 import { buildChild, ChildStore } from './child-store';
 import { GetSlice, Slice, Store } from './store';
 

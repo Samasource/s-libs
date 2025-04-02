@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { fakeAsync, flushMicrotasks } from '@angular/core/testing';
-import { noop } from '@s-libs/micro-dash';
+import { noop } from '@sama/micro-dash';
 import { expectTypeOf } from 'expect-type';
 import { ComponentContext } from '../component-context';
 import { staticTest } from '../static-test/static-test';

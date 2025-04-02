@@ -12,9 +12,9 @@
     "baseUrl": "../lib",
     "experimentalDecorators": true,
     "paths": {
-      "@s-libs/js-core": ["../../../../dist/js-core"],
-      "@s-libs/micro-dash": ["../../../../dist/micro-dash"],
-      "@s-libs/rxjs-core": ["../../../../dist/rxjs-core"]
+      "@sama/js-core": ["../../../../dist/js-core"],
+      "@sama/micro-dash": ["../../../../dist/micro-dash"],
+      "@sama/rxjs-core": ["../../../../dist/rxjs-core"]
     }
   }
 }

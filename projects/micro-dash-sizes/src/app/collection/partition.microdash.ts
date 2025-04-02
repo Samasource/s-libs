@@ -1,4 +1,4 @@
-import { partition } from '@s-libs/micro-dash';
+import { partition } from '@sama/micro-dash';
 
 console.log(
   partition([1], () => {}),

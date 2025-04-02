@@ -21,8 +21,8 @@ import {
   Routes,
 } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { sleep } from '@s-libs/js-core';
-import { noop } from '@s-libs/micro-dash';
+import { sleep } from '@sama/js-core';
+import { noop } from '@sama/micro-dash';
 import { expectTypeOf } from 'expect-type';
 import { staticTest } from '../static-test/static-test';
 import { ComponentContext } from './component-context';

@@ -1,4 +1,4 @@
-import { marbleTest } from '@s-libs/ng-dev';
+import { marbleTest } from '@sama/ng-dev';
 import {
   BehaviorSubject,
   lastValueFrom,

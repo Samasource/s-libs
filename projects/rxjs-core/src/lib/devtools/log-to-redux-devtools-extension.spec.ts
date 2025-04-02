@@ -1,5 +1,5 @@
 import { EMPTY, Subject } from 'rxjs';
-import { expectSingleCallAndReset } from '@s-libs/ng-dev';
+import { expectSingleCallAndReset } from '@sama/ng-dev';
 import {
   Connection,
   Extension,

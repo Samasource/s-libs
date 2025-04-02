@@ -1,3 +1,3 @@
-import { upperFirst } from '@s-libs/micro-dash';
+import { upperFirst } from '@sama/micro-dash';
 
 console.log(upperFirst('a string'), upperFirst(undefined));

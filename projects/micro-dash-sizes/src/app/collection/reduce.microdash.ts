@@ -1,4 +1,4 @@
-import { reduce } from '@s-libs/micro-dash';
+import { reduce } from '@sama/micro-dash';
 
 console.log(
   reduce([], () => 1),

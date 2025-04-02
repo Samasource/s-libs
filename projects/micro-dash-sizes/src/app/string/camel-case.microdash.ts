@@ -1,3 +1,3 @@
-import { camelCase } from '@s-libs/micro-dash';
+import { camelCase } from '@sama/micro-dash';
 
 camelCase('a string');

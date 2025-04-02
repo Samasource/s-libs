@@ -9,7 +9,7 @@ To quickly see which functions are available, and any difference from Lodash bey
 Install using:
 
 ```shell script
-npm install @s-libs/micro-dash
+npm install @sama/micro-dash
 ```
 
 ## Project goals

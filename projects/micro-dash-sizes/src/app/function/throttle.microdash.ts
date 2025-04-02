@@ -1,4 +1,4 @@
-import { throttle } from '@s-libs/micro-dash';
+import { throttle } from '@sama/micro-dash';
 
 throttle(() => {})();
 throttle(

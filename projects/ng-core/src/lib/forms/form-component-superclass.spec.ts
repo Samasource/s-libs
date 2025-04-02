@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { ComponentContext } from '@s-libs/ng-dev';
+import { ComponentContext } from '@sama/ng-dev';
 import { click, find, findButton } from '../../test-helpers';
 import { DirectiveSuperclass } from '../directive-superclass';
 import { InjectableSuperclass } from '../injectable-superclass';

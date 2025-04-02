@@ -1,4 +1,4 @@
-import { isString } from '@s-libs/micro-dash';
+import { isString } from '@sama/micro-dash';
 
 console.log(isString('a'));
 console.log(isString({}));

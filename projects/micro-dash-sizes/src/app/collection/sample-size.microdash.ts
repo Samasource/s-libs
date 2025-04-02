@@ -1,4 +1,4 @@
-import { sampleSize } from '@s-libs/micro-dash';
+import { sampleSize } from '@sama/micro-dash';
 
 console.log(
   sampleSize([1, 2], 1),

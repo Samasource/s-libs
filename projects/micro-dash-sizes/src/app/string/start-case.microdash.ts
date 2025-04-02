@@ -1,3 +1,3 @@
-import { startCase } from '@s-libs/micro-dash';
+import { startCase } from '@sama/micro-dash';
 
 startCase('a string');

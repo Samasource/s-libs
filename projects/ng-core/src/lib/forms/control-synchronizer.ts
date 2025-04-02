@@ -1,7 +1,7 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-import { wrapMethod } from '@s-libs/js-core';
-import { isEqual, keys, omit, size } from '@s-libs/micro-dash';
-import { SubscriptionManager } from '@s-libs/rxjs-core';
+import { wrapMethod } from '@sama/js-core';
+import { isEqual, keys, omit, size } from '@sama/micro-dash';
+import { SubscriptionManager } from '@sama/rxjs-core';
 import { merge, MonoTypeOperatorFunction } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 

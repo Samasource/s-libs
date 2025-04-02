@@ -5,9 +5,9 @@ import {
   ReactiveFormsModule,
   ValidationErrors,
 } from '@angular/forms';
-import { assert, Deferred } from '@s-libs/js-core';
-import { AngularContext, ComponentContext } from '@s-libs/ng-dev';
-import { logValues } from '@s-libs/rxjs-core';
+import { assert, Deferred } from '@sama/js-core';
+import { AngularContext, ComponentContext } from '@sama/ng-dev';
+import { logValues } from '@sama/rxjs-core';
 import { delayWhen, Observable, Subject } from 'rxjs';
 import {
   provideValueAccessor,

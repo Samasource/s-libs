@@ -1,13 +1,13 @@
-Painlessly integrate [`app-state`](https://github.com/simontonsoftware/s-libs/projects/app-state) into template-driven Angular forms.
+Painlessly integrate [`app-state`](https://github.com/Samasource/s-libs/projects/app-state) into template-driven Angular forms.
 
-**PLEASE NOTE:** [`signal-store`](https://github.com/simontonsoftware/s-libs/tree/master/projects/signal-store) is now available for Angular apps, based on Angular signals instead of RxJS. Its updated design does not require a separate library like this for integration into forms. Instead, with that library you simply use `[(ngModel)]="store.state"`.
+**PLEASE NOTE:** [`signal-store`](https://github.com/Samasource/s-libs/tree/master/projects/signal-store) is now available for Angular apps, based on Angular signals instead of RxJS. Its updated design does not require a separate library like this for integration into forms. Instead, with that library you simply use `[(ngModel)]="store.state"`.
 
 ## Installation
 
 Install along with its peer dependencies using:
 
 ```shell script
-npm install @s-libs/ng-app-state @s-libs/app-state @s-libs/ng-core @s-libs/rxjs-core @s-libs/js-core @s-libs/micro-dash
+npm install @sama/ng-app-state @sama/app-state @sama/ng-core @sama/rxjs-core @sama/js-core @sama/micro-dash
 ```
 
 ## Setup
@@ -17,7 +17,7 @@ In your module, import `NasModelModule`, e.g.:
 ```ts
 // app.module.ts
 
-import { NasModelModule } from "@s-libs/ng-app-state";
+import { NasModelModule } from "@sama/ng-app-state";
 
 @NgModule({
   imports: [NasModelModule],

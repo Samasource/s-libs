@@ -1,4 +1,4 @@
-import { Debouncer, isDefined } from '@s-libs/js-core';
+import { Debouncer, isDefined } from '@sama/js-core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 import { Store } from '../index';

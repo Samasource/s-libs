@@ -1,6 +1,6 @@
-import { isSetEqual } from '@s-libs/js-core';
-import { keys } from '@s-libs/micro-dash';
-import { mapAndCacheObjectElements } from '@s-libs/rxjs-core';
+import { isSetEqual } from '@sama/js-core';
+import { keys } from '@sama/micro-dash';
+import { mapAndCacheObjectElements } from '@sama/rxjs-core';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Store } from '../index';

@@ -7,8 +7,8 @@ import {
   spreadObjectStore$,
   Store,
   UndoManager,
-} from '@s-libs/app-state';
-import { staticTest } from '@s-libs/ng-dev';
+} from '@sama/app-state';
+import { staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 
 describe('app-state', () => {
