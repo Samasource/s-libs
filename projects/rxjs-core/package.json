@@ -1,6 +1,6 @@
 {
   "name": "@sama/rxjs-core",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "author": "Samasource",
   "license": "MIT",
   "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/rxjs-core",
@@ -10,8 +10,8 @@
     "directory": "projects/rxjs-core"
   },
   "peerDependencies": {
-    "@sama/js-core": "^18.0.0",
-    "@sama/micro-dash": "^18.0.0",
+    "@sama/js-core": "^19.0.0",
+    "@sama/micro-dash": "^19.0.0",
     "rxjs": "^7.8.0"
   },
   "dependencies": {
