@@ -17,5 +17,9 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run --prefix ../.. build",
+    "test": "npm run --prefix ../.. test -- app-state"
+  }
 }
