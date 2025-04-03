@@ -11,5 +11,6 @@ export function chunk<T>(array: readonly T[], size = 1): T[][] {
   for (let i = 0; i < array.length; i += Math.max(1, size)) {
     chunks.push(array.slice(i, i + size));
   }
+  console.log('test');
   return chunks;
 }
