@@ -47,7 +47,7 @@ import { DomSanitizer } from '@angular/platform-browser';
  */
 export function provideMatIcons(icons: string): Provider {
   return provideAppInitializer(() => {
-        const initializerFn = ((): VoidFunction => {
+    const initializerFn = ((): VoidFunction => {
       const registry = inject(MatIconRegistry);
       const sanitizer = inject(DomSanitizer);
       return () => {
@@ -56,6 +56,6 @@ export function provideMatIcons(icons: string): Provider {
         );
       };
     })();
-        return initializerFn();
-      });
+    return initializerFn();
+  });
 }

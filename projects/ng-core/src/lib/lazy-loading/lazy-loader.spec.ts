@@ -59,14 +59,14 @@ describe('LazyLoader', () => {
     it('works for the example in the docs', () => {
       // my-dialog.ts
       @Component({
-    template: `
+        template: `
           <mat-dialog-content>This is a dialog</mat-dialog-content>
           <mat-dialog-actions>
             <button mat-button mat-dialog-close>OK</button>
           </mat-dialog-actions>
         `,
-    imports: [MatButtonModule, MatDialogModule]
-})
+        imports: [MatButtonModule, MatDialogModule],
+      })
       class MyDialogComponent {}
 
       // dialog-bundle.ts

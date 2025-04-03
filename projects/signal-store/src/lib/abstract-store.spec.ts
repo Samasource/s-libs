@@ -41,10 +41,10 @@ describe('AbstractStore', () => {
       }
 
       @Component({
-    template: `<sl-inner />`,
-    imports: [InnerComponent],
-    changeDetection: ChangeDetectionStrategy.OnPush
-})
+        template: `<sl-inner />`,
+        imports: [InnerComponent],
+        changeDetection: ChangeDetectionStrategy.OnPush,
+      })
       class TestComponent {}
 
       const ctx = new ComponentContext(TestComponent);

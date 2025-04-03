@@ -1,7 +1,19 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { HttpTestingController } from '@angular/common/http/testing';
-import { APP_ID, ApplicationRef, Component, ComponentFactoryResolver, DoCheck, ErrorHandler, inject, Injectable, InjectionToken, Injector, provideAppInitializer } from '@angular/core';
+import {
+  APP_ID,
+  ApplicationRef,
+  Component,
+  ComponentFactoryResolver,
+  DoCheck,
+  ErrorHandler,
+  inject,
+  Injectable,
+  InjectionToken,
+  Injector,
+  provideAppInitializer,
+} from '@angular/core';
 import { flush, TestBed, tick } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSnackBarHarness } from '@angular/material/snack-bar/testing';
@@ -160,9 +172,7 @@ describe('AngularContext', () => {
       class InitContext extends AngularContext {
         constructor() {
           super({
-            providers: [
-              provideAppInitializer(init),
-            ],
+            providers: [provideAppInitializer(init)],
           });
         }
       }

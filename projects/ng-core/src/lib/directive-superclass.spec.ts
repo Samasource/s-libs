@@ -48,8 +48,8 @@ class ColorTextComponent extends DirectiveSuperclass {
 }
 
 @Component({
-    imports: [ColorTextComponent, NgIf],
-    template: `
+  imports: [ColorTextComponent, NgIf],
+  template: `
     <button (click)="toggle('prefix', 'Dark')">Dark</button>
     <button (click)="toggle('prefix2', 'Slate')">Slate</button>
     <button (click)="toggle('prefix', 'Dark'); toggle('prefix2', 'Slate')">
@@ -59,7 +59,7 @@ class ColorTextComponent extends DirectiveSuperclass {
     @if (!hide) {
       <sl-color-text [prefix]="prefix" [prefix2]="prefix2" />
     }
-  `
+  `,
 })
 class TestComponent {
   color$ = new BehaviorSubject('Green');

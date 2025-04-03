@@ -9,9 +9,9 @@ describe('provideMatIcons()', () => {
     const icons = '<svg id="my_icon"><rect /></svg>';
 
     @Component({
-    imports: [MatIconModule],
-    template: '<mat-icon svgIcon="my_icon" />'
-})
+      imports: [MatIconModule],
+      template: '<mat-icon svgIcon="my_icon" />',
+    })
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent, {

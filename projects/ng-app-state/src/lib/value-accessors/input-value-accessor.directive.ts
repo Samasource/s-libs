@@ -10,16 +10,17 @@ import { provideValueAccessor } from '@sama/ng-core';
 
 /** @hidden */
 @Directive({
-    selector: 'input:not([type=checkbox]):not([type=number]):not([type=radio]):not([type=range])[nasModel],textarea[nasModel]',
-    // eslint-disable-next-line @angular-eslint/no-host-metadata-property
-    host: {
-        '(input)': '$any(this)._handleInput($event.target.value)',
-        '(blur)': 'onTouched()',
-        '(compositionstart)': '$any(this)._compositionStart()',
-        '(compositionend)': '$any(this)._compositionEnd($event.target.value)',
-    },
-    providers: [provideValueAccessor(InputValueAccessorDirective)],
-    standalone: false
+  selector:
+    'input:not([type=checkbox]):not([type=number]):not([type=radio]):not([type=range])[nasModel],textarea[nasModel]',
+  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
+  host: {
+    '(input)': '$any(this)._handleInput($event.target.value)',
+    '(blur)': 'onTouched()',
+    '(compositionstart)': '$any(this)._compositionStart()',
+    '(compositionend)': '$any(this)._compositionEnd($event.target.value)',
+  },
+  providers: [provideValueAccessor(InputValueAccessorDirective)],
+  standalone: false,
 })
 export class InputValueAccessorDirective extends DefaultValueAccessor {
   constructor(

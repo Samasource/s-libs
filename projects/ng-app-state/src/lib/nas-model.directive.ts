@@ -11,8 +11,8 @@ import { Store } from '@sama/app-state';
 import { Subscription } from 'rxjs';
 
 @Directive({
-    selector: '[nasModel]',
-    standalone: false
+  selector: '[nasModel]',
+  standalone: false,
 })
 export class NasModelDirective<T> implements AfterViewInit, OnDestroy {
   #store!: Store<T> | null;

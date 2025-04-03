@@ -4,13 +4,13 @@ import { provideValueAccessor } from '@sama/ng-core';
 
 /** @hidden */
 @Directive({
-    selector: 'input[type=checkbox][nasModel]',
-    // eslint-disable-next-line @angular-eslint/no-host-metadata-property
-    host: {
-        '(change)': 'onChange($event.target.checked)',
-        '(blur)': 'onTouched()',
-    },
-    providers: [provideValueAccessor(CheckboxValueAccessorDirective)],
-    standalone: false
+  selector: 'input[type=checkbox][nasModel]',
+  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
+  host: {
+    '(change)': 'onChange($event.target.checked)',
+    '(blur)': 'onTouched()',
+  },
+  providers: [provideValueAccessor(CheckboxValueAccessorDirective)],
+  standalone: false,
 })
 export class CheckboxValueAccessorDirective extends CheckboxControlValueAccessor {}

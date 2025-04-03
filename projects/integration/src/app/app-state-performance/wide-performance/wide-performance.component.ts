@@ -9,10 +9,10 @@ import {
 import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'sl-wide-performance',
-    templateUrl: './wide-performance.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [FormsModule]
+  selector: 'sl-wide-performance',
+  templateUrl: './wide-performance.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [FormsModule],
 })
 export class WidePerformanceComponent {
   width = 1000;

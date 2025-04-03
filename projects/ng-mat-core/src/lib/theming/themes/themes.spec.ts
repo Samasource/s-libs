@@ -7,10 +7,10 @@ import { getStyle } from '../test-utils';
 describe('themes.scss', () => {
   it('includes themes', () => {
     @Component({
-    imports: [MatButtonModule],
-    styleUrl: './minimal-config.spec.scss',
-    template: `<button mat-button>Clickity click</button>`
-})
+      imports: [MatButtonModule],
+      styleUrl: './minimal-config.spec.scss',
+      template: `<button mat-button>Clickity click</button>`,
+    })
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent);
@@ -22,13 +22,13 @@ describe('themes.scss', () => {
 
   it('allows specifying only some components', () => {
     @Component({
-    imports: [MatButtonModule, MatToolbarModule],
-    styleUrl: './only-button.spec.scss',
-    template: `
+      imports: [MatButtonModule, MatToolbarModule],
+      styleUrl: './only-button.spec.scss',
+      template: `
         <button mat-button color="primary"></button>
         <mat-toolbar color="accent"></mat-toolbar>
-      `
-})
+      `,
+    })
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent);
@@ -40,10 +40,10 @@ describe('themes.scss', () => {
 
   it('allows specifying density', () => {
     @Component({
-    imports: [MatButtonModule],
-    styleUrl: './custom-density.spec.scss',
-    template: `<button mat-button></button>`
-})
+      imports: [MatButtonModule],
+      styleUrl: './custom-density.spec.scss',
+      template: `<button mat-button></button>`,
+    })
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent);
@@ -54,10 +54,10 @@ describe('themes.scss', () => {
 
   it('allows passing in a custom palette key', () => {
     @Component({
-    imports: [MatToolbarModule],
-    styleUrl: './custom-palette-key.spec.scss',
-    template: `<mat-toolbar color="accent" />`
-})
+      imports: [MatToolbarModule],
+      styleUrl: './custom-palette-key.spec.scss',
+      template: `<mat-toolbar color="accent" />`,
+    })
     class TestComponent {}
 
     const ctx = new ComponentContext(TestComponent);
@@ -69,10 +69,10 @@ describe('themes.scss', () => {
   describe('typography', () => {
     it('defaults to include typography', () => {
       @Component({
-    imports: [MatButtonModule],
-    styleUrl: './minimal-config.spec.scss',
-    template: `<button mat-button></button>`
-})
+        imports: [MatButtonModule],
+        styleUrl: './minimal-config.spec.scss',
+        template: `<button mat-button></button>`,
+      })
       class TestComponent {}
 
       const ctx = new ComponentContext(TestComponent);
@@ -83,10 +83,10 @@ describe('themes.scss', () => {
 
     it('allows specifying typography', () => {
       @Component({
-    imports: [MatButtonModule],
-    styleUrl: './custom-typography.spec.scss',
-    template: `<button mat-button></button>`
-})
+        imports: [MatButtonModule],
+        styleUrl: './custom-typography.spec.scss',
+        template: `<button mat-button></button>`,
+      })
       class TestComponent {}
 
       const ctx = new ComponentContext(TestComponent);
@@ -97,14 +97,14 @@ describe('themes.scss', () => {
 
     it('allows opting out of typography', () => {
       @Component({
-    imports: [MatButtonModule],
-    styleUrl: './no-typography.spec.scss',
-    template: `
+        imports: [MatButtonModule],
+        styleUrl: './no-typography.spec.scss',
+        template: `
           <div style="font-family: Arial">
             <button mat-button></button>
           </div>
-        `
-})
+        `,
+      })
       class TestComponent {}
 
       const ctx = new ComponentContext(TestComponent);

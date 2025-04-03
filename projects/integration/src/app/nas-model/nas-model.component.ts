@@ -10,11 +10,11 @@ import { City, NasModelState } from './nas-model-state';
 import { NasModelStore } from './nas-model-store';
 
 @Component({
-    selector: 'sl-nas-model',
-    templateUrl: './nas-model.component.html',
-    styleUrl: './nas-model.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [AsyncPipe, FormsModule, NasModelModule, NgFor]
+  selector: 'sl-nas-model',
+  templateUrl: './nas-model.component.html',
+  styleUrl: './nas-model.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [AsyncPipe, FormsModule, NasModelModule, NgFor],
 })
 export class NasModelComponent {
   cities: City[] = ['San Francisco', 'Nairobi', 'Gulu'];
