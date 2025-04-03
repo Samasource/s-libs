@@ -5,8 +5,9 @@ export class RootStore<T extends object> extends Store<T> {
   private batchCount = 0;
 
   constructor(state: T) {
+    // eslint-disable-next-line arrow-body-style
     super(() => {
-      // @ts-ignore -- depending on how the project is compiled, this can cause a typing error
+      // @ts-expect-error -- depending on how the project is compiled, this can cause a typing error
       return this as RootStore<object>;
     }, buildChild);
     this.set(state);

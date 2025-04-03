@@ -11,7 +11,7 @@
     "test:dev": "ng test",
     "lint": "ng lint",
     "dtslint": "dtslint --expectOnly --localTs node_modules/typescript/lib",
-    "format:lint": "prettier --check \"**/*.{html,js,json,md,scss,ts,yml}\"",
+    "format:lint": "ng lint && prettier --check \"**/*.{html,js,json,md,scss,ts,yml}\"",
     "format": "prettier --write \"**/*.{html,js,json,md,scss,ts,yml}\"",
     "docs": "npm run ts-node -- scripts/docs-libs",
     "git-publish": "standard-version --commit-all",

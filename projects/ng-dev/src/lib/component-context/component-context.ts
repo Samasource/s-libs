@@ -254,7 +254,6 @@ export class ComponentContext<T> extends AngularContext {
   }
 
   #isInitialized(): boolean {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions -- this actually can be undefined, but typing doesn't reflect it because once everything is initialized its defined
     return !!this.fixture;
   }
 
