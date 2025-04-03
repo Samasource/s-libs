@@ -10,8 +10,8 @@
     "directory": "projects/ng-app-state"
   },
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
     "@sama/js-core": "^18.0.0",
     "@sama/micro-dash": "^18.0.0",
     "@sama/ng-core": "^18.0.0",
