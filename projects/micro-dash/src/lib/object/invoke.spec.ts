@@ -28,7 +28,8 @@ describe('invoke()', () => {
       // 1 element path
       //
 
-      expectTypeOf(invoke({ a: () => 1 }, ['a'])).toEqualTypeOf<number>();
+      let invokeResult: number = invoke({ a: () => 1 }, ['a']);
+      expectTypeOf(invokeResult).toEqualTypeOf<number>();
       expectTypeOf(
         invoke({ a: (a: boolean) => a }, ['a'], true),
       ).toEqualTypeOf<boolean>();
@@ -43,9 +44,8 @@ describe('invoke()', () => {
       // 2 element path
       //
 
-      expectTypeOf(
-        invoke({ a: { b: () => 1 } }, ['a', 'b']),
-      ).toEqualTypeOf<number>();
+      invokeResult = invoke({ a: { b: () => 1 } }, ['a', 'b']);
+      expectTypeOf(invokeResult).toEqualTypeOf<number>();
       expectTypeOf(
         invoke({ a: { b: (a: boolean) => a } }, ['a', 'b'], true),
       ).toEqualTypeOf<boolean>();
