@@ -19,7 +19,9 @@ describe('LazyLoader', () => {
       class LazyService {}
       const bundle = { tokenMap: { LazyService } };
       const loader = new LazyLoader(Promise.resolve({ default: bundle }));
-      expectTypeOf(loader.inject).parameter(0).toEqualTypeOf<'LazyService'>();
+      expectTypeOf(loader.inject('LazyService')).toEqualTypeOf<
+        Promise<LazyService>
+      >();
       expectTypeOf(loader.getToken).parameter(0).toEqualTypeOf<'LazyService'>();
     });
   });
