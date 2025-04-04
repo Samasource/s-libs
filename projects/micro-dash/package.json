@@ -1,6 +1,6 @@
 {
   "name": "@sama/micro-dash",
-  "version": "19.0.0",
+  "version": "19.0.1",
   "description": "Lightweight implementations of simplified lodash functions",
   "author": "Samasource",
   "license": "MIT",

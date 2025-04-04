@@ -1,6 +1,6 @@
 {
   "name": "@sama/js-core",
-  "version": "19.0.0",
+  "version": "19.0.1",
   "author": "Samasource",
   "license": "MIT",
   "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/js-core",
@@ -10,7 +10,7 @@
     "directory": "projects/js-core"
   },
   "peerDependencies": {
-    "@sama/micro-dash": "^19.0.0"
+    "@sama/micro-dash": "^19.0.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"
