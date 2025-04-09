@@ -1,6 +1,6 @@
 {
   "name": "@sama/ng-core",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "author": "Samasource",
   "license": "MIT",
   "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/ng-core",
@@ -10,11 +10,11 @@
     "directory": "projects/ng-core"
   },
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0",
-    "@sama/js-core": "^18.0.0",
-    "@sama/micro-dash": "^18.0.0",
-    "@sama/rxjs-core": "^18.0.0"
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@sama/js-core": "^19.0.0",
+    "@sama/micro-dash": "^19.0.0",
+    "@sama/rxjs-core": "^19.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

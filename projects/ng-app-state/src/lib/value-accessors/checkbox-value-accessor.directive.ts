@@ -11,5 +11,6 @@ import { provideValueAccessor } from '@sama/ng-core';
     '(blur)': 'onTouched()',
   },
   providers: [provideValueAccessor(CheckboxValueAccessorDirective)],
+  standalone: false,
 })
 export class CheckboxValueAccessorDirective extends CheckboxControlValueAccessor {}
