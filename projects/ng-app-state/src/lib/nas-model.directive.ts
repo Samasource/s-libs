@@ -1,7 +1,7 @@
 import { AfterViewInit, Directive, effect, inject, input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Store } from '@sama-libs/app-state';
-import { InjectableSuperclass } from '@sama-libs/ng-core';
+import { Store } from '@sama/app-state';
+import { InjectableSuperclass } from '@sama/ng-core';
 
 @Directive({ selector: '[nasModel]', standalone: false })
 export class NasModelDirective<T>

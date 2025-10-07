@@ -1,4 +1,4 @@
-import { expectSingleCallAndReset, staticTest } from '@sama-libs/ng-dev';
+import { expectSingleCallAndReset, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { wrapMethod } from './wrap-method';
 

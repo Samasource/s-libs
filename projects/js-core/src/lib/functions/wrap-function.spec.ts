@@ -1,5 +1,5 @@
-import { noop } from '@sama-libs/micro-dash';
-import { expectSingleCallAndReset, staticTest } from '@sama-libs/ng-dev';
+import { noop } from '@sama/micro-dash';
+import { expectSingleCallAndReset, staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 import { wrapFunction } from './wrap-function';
 

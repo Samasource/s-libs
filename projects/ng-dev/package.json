@@ -13,10 +13,10 @@
     "@angular/cdk": "^20.0.0",
     "@angular/common": "^20.0.0",
     "@angular/core": "^20.0.0",
-    "@sama-libs/js-core": "^20.0.0",
-    "@sama-libs/micro-dash": "^20.0.0",
-    "@sama-libs/ng-core": "^20.0.0",
-    "@sama-libs/rxjs-core": "^20.0.0",
+    "@sama/js-core": "^20.0.0",
+    "@sama/micro-dash": "^20.0.0",
+    "@sama/ng-core": "^20.0.0",
+    "@sama/rxjs-core": "^20.0.0",
     "jasmine-core": "^5.7.0"
   },
   "dependencies": {

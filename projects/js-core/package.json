@@ -10,7 +10,7 @@
     "directory": "projects/js-core"
   },
   "peerDependencies": {
-    "@sama-libs/micro-dash": "^20.0.0"
+    "@sama/micro-dash": "^20.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
