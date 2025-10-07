@@ -17,7 +17,7 @@ import {
   AngularContext,
   extendMetadata,
 } from '../angular-context/angular-context';
-import { WrapperComponent } from './wrapper.component';
+import { Inputs, WrapperComponent } from './wrapper.component';
 
 /**
  * Provides the foundation for an opinionated pattern for component tests.
@@ -26,7 +26,7 @@ import { WrapperComponent } from './wrapper.component';
  * - Automatically creates your component at the beginning of `run()`.
  * - Sets up Angular to call `ngOnChanges()` like it would in production. This is not the case if you use the standard `TestBed.createComponent()` directly.
  * - Wraps your component in a parent that you can easily style however you like.
- * - Lets you use {@link https://material.angular.io/cdk/test-harnesses/overview | component harnesses} in the `fakeAsync` zone, which is normally a challenge.
+ * - Lets you use {@link https://material.angular.dev/cdk/testing/overview | component harnesses} in the `fakeAsync` zone, which is normally a challenge.
  * - Automatically disables animations.
  * - Causes async {@link https://angular.dev/api/core/APP_INITIALIZER | APP_INITIALIZER}s to complete before instantiating the component. Two caveats:
  *   - this requires all work in your initializers to complete with a call to `tick()`
@@ -34,9 +34,9 @@ import { WrapperComponent } from './wrapper.component';
  *
  * A very simple example:
  * ```ts
- * @Component({ standalone: true, template: 'Hello, {{name}}!' })
+ * @Component({ standalone: true, template: 'Hello, {{name()}}!' })
  * class GreeterComponent {
- *   @Input() name!: string;
+ *   readonly name = input.required<string>();
  * }
  *
  * it('greets you by name', () => {
@@ -56,12 +56,8 @@ import { WrapperComponent } from './wrapper.component';
  *  // To re-use your context setup, make a subclass of ComponentContext to import into any spec
  *  class AppContext extends ComponentContext<AppComponent> {
  *    constructor() {
- *      super(AppComponent, {
- *        // Import `routes` from `app.routes.ts`
- *        imports: [RouterTestingModule.withRoutes(routes)],
- *        // Import `appConfig` from `app.config.ts`
- *        providers: appConfig.providers,
- *      });
+ *      // Import `appConfig` from `app.config.ts`
+ *      super(AppComponent, appConfig);
  *    }
  *  }
  *
@@ -142,7 +138,7 @@ export class ComponentContext<T> extends AngularContext {
   #componentType: Type<T>;
   #inputProperties: Set<keyof T>;
 
-  #inputs: Partial<T>;
+  #inputs: Inputs<T>;
   #wrapperStyles: Record<string, any>;
 
   /**
@@ -197,8 +193,9 @@ export class ComponentContext<T> extends AngularContext {
   /**
    * Assign inputs passed into your component. Can be called before `run()` to set the initial inputs, or within `run()` to update them and trigger all the appropriate change detection and lifecycle hooks.
    */
-  assignInputs(inputs: Partial<T>): void {
+  assignInputs(inputs: Inputs<T>): void {
     for (const key of keys(inputs)) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
       if (!this.#inputProperties.has(key as keyof T)) {
         throw new Error(
           `Cannot bind to "${String(
@@ -219,8 +216,9 @@ export class ComponentContext<T> extends AngularContext {
    * Use within `run()` to get your instantiated component that is on the page.
    */
   getComponentInstance(): T {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return this.fixture.debugElement.query(By.directive(this.#componentType))
-      .componentInstance as T;
+      .componentInstance;
   }
 
   /**
@@ -269,6 +267,7 @@ export class ComponentContext<T> extends AngularContext {
   }
 
   #getWrapperComponentInstance(): WrapperComponent<T> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     return this.fixture.componentInstance as WrapperComponent<T>;
   }
 }

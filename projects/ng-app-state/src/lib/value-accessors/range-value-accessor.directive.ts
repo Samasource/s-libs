@@ -5,6 +5,7 @@ import { AbstractInputValueAccessorDirective } from './abstract-input-value-acce
 /** @hidden */
 @Directive({
   selector: 'input[type=range][nasModel]',
+  standalone: false,
   providers: [provideValueAccessor(RangeValueAccessorDirective)],
   standalone: false,
 })

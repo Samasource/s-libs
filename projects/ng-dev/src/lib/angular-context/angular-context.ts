@@ -37,12 +37,13 @@ export function extendMetadata(
       }
     });
   }
-  return result as TestModuleMetadata;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return result;
 }
 
 /**
  * Provides the foundation for an opinionated testing pattern.
- * - All test are run in the `fakeAsync` zone. This gives you full control over
+ * - All tests are run in the `fakeAsync` zone. This gives you full control over
  *   the timing of everything by default.
  * - Variables that are initialized for each test exist in a context that is
  *   thrown away, so they cannot leak between tests.
@@ -58,13 +59,13 @@ export function extendMetadata(
  * // This is the class we will test.
  * @Injectable({ providedIn: 'root' })
  * class MemoriesService {
- *   constructor(private httpClient: HttpClient) {}
+ *   #httpClient = inject(HttpClient);
  *
  *   getLastYearToday(): Observable<any> {
  *     const datetime = new Date();
  *     datetime.setFullYear(datetime.getFullYear() - 1);
  *     const date = datetime.toISOString().split('T')[0];
- *     return this.httpClient.get(`http://example.com/post-from/${date}`);
+ *     return this.#httpClient.get(`http://example.com/post-from/${date}`);
  *   }
  * }
  *

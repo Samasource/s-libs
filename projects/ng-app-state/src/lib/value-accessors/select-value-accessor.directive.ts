@@ -5,11 +5,7 @@ import { provideValueAccessor } from '@sama/ng-core';
 /** @hidden */
 @Directive({
   selector: 'select:not([multiple])[nasModel]',
-  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
-  host: {
-    '(change)': 'onChange($event.target.value)',
-    '(blur)': 'onTouched()',
-  },
+  standalone: false,
   providers: [
     provideValueAccessor(SelectValueAccessorDirective),
     {
@@ -17,6 +13,9 @@ import { provideValueAccessor } from '@sama/ng-core';
       useExisting: SelectValueAccessorDirective,
     },
   ],
-  standalone: false,
+  host: {
+    '(change)': 'onChange($any($event.target).value)',
+    '(blur)': 'onTouched()',
+  },
 })
 export class SelectValueAccessorDirective extends SelectControlValueAccessor {}

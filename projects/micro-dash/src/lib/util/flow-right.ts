@@ -4,9 +4,9 @@ import { identity } from './identity';
  * This function is like `flow` except that it creates a function that invokes the given functions from right to left.
  *
  * Differences from lodash:
- * - does not accept an arrays of functions
- * - all functions will be given only 1 argument (in lodash the first one called can take multiple)
- * - might not construct a new function when it is not needed
+ * - does not accept an array of functions
+ * - the first function called can take 0-1 arguments (in lodash it can be any number)
+ * - might not construct a new function when it is unnecessary
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 5,710 bytes
@@ -92,13 +92,11 @@ export function flowRight<A1, R1, R2, R3, R4, R5, R6, R7>(
   f1: (a1: A1) => R1,
 ): (a1: A1) => R7;
 
-// generic function
-// export function flowRight<TResult extends Function>(...funcs: Function[]): TResult;
-// export function flowRight<TResult extends Function>(funcs: Function[]): TResult;
-
+export function flowRight(): <T>(a: T) => T;
 export function flowRight<T>(
-  ...funcs: ReadonlyArray<(val: T) => T>
-): (val: T) => T;
+  ...funcs: [...Array<(val: T) => T>, f1: () => T]
+): () => T;
+export function flowRight<T>(...funcs: Array<(val: T) => T>): (val: T) => T;
 
 export function flowRight(...funcs: readonly Function[]): Function {
   if (funcs.length) {

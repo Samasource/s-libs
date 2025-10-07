@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Injector } from '@angular/core';
+import { Directive, ElementRef, inject } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { noop } from '@sama/micro-dash';
 
@@ -9,14 +9,10 @@ export abstract class AbstractValueAccessorDirective<T extends HTMLElement>
   onChangeFn!: (value: any) => void;
   onTouchedFn = noop;
 
-  private elementRef: ElementRef;
-
-  constructor(injector: Injector) {
-    this.elementRef = injector.get(ElementRef);
-  }
+  #elementRef = inject<ElementRef<T>>(ElementRef);
 
   protected get element(): T {
-    return this.elementRef.nativeElement as T;
+    return this.#elementRef.nativeElement;
   }
 
   registerOnChange(fn: (value: any) => void): void {

@@ -19,9 +19,13 @@ describe('LazyLoader', () => {
       class LazyService {}
       const bundle = { tokenMap: { LazyService } };
       const loader = new LazyLoader(Promise.resolve({ default: bundle }));
-      expectTypeOf(loader.inject('LazyService')).toEqualTypeOf<
-        Promise<LazyService>
-      >();
+
+      // during upgrade to Angular 19, this workaround popped up
+      expectTypeOf<
+        Parameters<typeof loader.inject>[0]
+      >().toEqualTypeOf<'LazyService'>();
+      // expectTypeOf(loader.inject).parameter(0).toEqualTypeOf<'LazyService'>();
+
       expectTypeOf(loader.getToken).parameter(0).toEqualTypeOf<'LazyService'>();
     });
   });
@@ -61,13 +65,13 @@ describe('LazyLoader', () => {
     it('works for the example in the docs', () => {
       // my-dialog.ts
       @Component({
+        imports: [MatButtonModule, MatDialogModule],
         template: `
           <mat-dialog-content>This is a dialog</mat-dialog-content>
           <mat-dialog-actions>
             <button mat-button mat-dialog-close>OK</button>
           </mat-dialog-actions>
         `,
-        imports: [MatButtonModule, MatDialogModule],
       })
       class MyDialogComponent {}
 
