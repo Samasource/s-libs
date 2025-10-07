@@ -1,4 +1,4 @@
-import { staticTest } from '@s-libs/ng-dev';
+import { staticTest } from '@sama/ng-dev';
 import {
   PersistentStore,
   pushToArrayStore,
