@@ -155,8 +155,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/js-core/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -193,8 +192,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/micro-dash/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -303,8 +301,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/ng-app-state/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -341,8 +338,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/ng-core/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -379,8 +375,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/ng-dev/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -417,8 +412,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/ng-mat-core/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -455,8 +449,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/rxjs-core/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -493,8 +486,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/signal-store/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "karmaConfig": "karma.conf.js"
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {

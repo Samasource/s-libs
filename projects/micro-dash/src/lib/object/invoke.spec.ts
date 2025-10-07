@@ -43,8 +43,6 @@ describe('invoke()', () => {
       // 2 element path
       //
 
-      invokeResult = invoke({ a: { b: () => 1 } }, ['a', 'b']);
-      expectTypeOf(invokeResult).toEqualTypeOf<number>();
       expectTypeOf(
         invoke({ a: { b: () => 1 } }, ['a', 'b']),
       ).toEqualTypeOf<1>();
