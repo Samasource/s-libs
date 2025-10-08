@@ -1,6 +1,6 @@
 {
   "name": "@sama/eslint-config-ng",
-  "version": "19.0.0",
+  "version": "20.0.0",
   "author": "Samasource",
   "license": "MIT",
   "homepage": "https://github.com/Samasource/s-libs/tree/master/projects/eslint-config-ng",
@@ -10,9 +10,9 @@
     "directory": "projects/eslint-config-ng"
   },
   "peerDependencies": {
-    "angular-eslint": "^19.0.0",
-    "typescript-eslint": "^8.0.0-alpha.20",
-    "eslint": "^9.3.0"
+    "angular-eslint": "^20.0.0",
+    "typescript-eslint": "^8.33.0",
+    "eslint": "^9.28.0"
   },
   "sideEffects": false
 }

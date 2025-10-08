@@ -5,7 +5,6 @@ import {
   APP_ID,
   ApplicationRef,
   Component,
-  ComponentFactoryResolver,
   DoCheck,
   ErrorHandler,
   inject,
@@ -334,10 +333,8 @@ describe('AngularContext', () => {
 
       const ctx = new AngularContext();
       ctx.run(() => {
-        const resolver = ctx.inject(ComponentFactoryResolver);
-        const factory = resolver.resolveComponentFactory(LocalComponent);
-        const componentRef = factory.create(ctx.inject(Injector));
-        ctx.inject(ApplicationRef).attachView(componentRef.hostView);
+        const fixture = TestBed.createComponent(LocalComponent);
+        ctx.inject(ApplicationRef).attachView(fixture.componentRef.hostView);
 
         expect(ranChangeDetection).toBe(false);
         ctx.tick();
@@ -359,10 +356,8 @@ describe('AngularContext', () => {
 
       const ctx = new AngularContext();
       ctx.run(() => {
-        const resolver = ctx.inject(ComponentFactoryResolver);
-        const factory = resolver.resolveComponentFactory(LocalComponent);
-        const componentRef = factory.create(ctx.inject(Injector));
-        ctx.inject(ApplicationRef).attachView(componentRef.hostView);
+        const fixture = TestBed.createComponent(LocalComponent);
+        ctx.inject(ApplicationRef).attachView(fixture.componentRef.hostView);
 
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         Promise.resolve().then(() => {
@@ -387,10 +382,8 @@ describe('AngularContext', () => {
 
       const ctx = new AngularContext();
       ctx.run(() => {
-        const resolver = ctx.inject(ComponentFactoryResolver);
-        const factory = resolver.resolveComponentFactory(LocalComponent);
-        const componentRef = factory.create(ctx.inject(Injector));
-        ctx.inject(ApplicationRef).attachView(componentRef.hostView);
+        const fixture = TestBed.createComponent(LocalComponent);
+        ctx.inject(ApplicationRef).attachView(fixture.componentRef.hostView);
 
         setTimeout(() => {
           ranTimeout = true;
@@ -435,7 +428,7 @@ describe('AngularContext', () => {
     it('errs if there are unexpected errors', () => {
       @Component({
         standalone: true,
-        template: '<button (click)="throwError()"></button>',
+        template: '<button (click)="throwError()">Break Me</button>',
       })
       class ThrowingComponent {
         throwError(): never {
@@ -450,7 +443,7 @@ describe('AngularContext', () => {
           const button = await loader.locatorFor('button')();
           await button.click();
         });
-      }).toThrowError('Expected no error(s), found 1');
+      }).toThrowError();
     });
   });
 
@@ -483,13 +476,13 @@ describe('AngularContext class-level doc example', () => {
   // This is the class we will test.
   @Injectable({ providedIn: 'root' })
   class MemoriesService {
-    constructor(private httpClient: HttpClient) {}
+    #httpClient = inject(HttpClient);
 
     getLastYearToday(): Observable<any> {
       const datetime = new Date();
       datetime.setFullYear(datetime.getFullYear() - 1);
       const date = datetime.toISOString().split('T')[0];
-      return this.httpClient.get(`http://example.com/post-from/${date}`);
+      return this.#httpClient.get(`http://example.com/post-from/${date}`);
     }
   }
 

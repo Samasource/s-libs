@@ -1,11 +1,12 @@
+import { staticTest } from '@sama/ng-dev';
 import {
   PersistentStore,
-  RootStore,
-  Store,
-  spreadArrayStore,
   pushToArrayStore,
+  RootStore,
+  spreadArrayStore,
+  spreadArrayStoreSignal,
+  Store,
 } from '@sama/signal-store';
-import { staticTest } from '@sama/ng-dev';
 import { expectTypeOf } from 'expect-type';
 
 describe('signal-store', () => {
@@ -25,6 +26,10 @@ describe('signal-store', () => {
 
   it('has spreadArrayStore()', () => {
     expect(spreadArrayStore).toBeDefined();
+  });
+
+  it('has spreadArrayStoreSignal()', () => {
+    expect(spreadArrayStoreSignal).toBeDefined();
   });
 
   it('has pushToArrayStore()', () => {

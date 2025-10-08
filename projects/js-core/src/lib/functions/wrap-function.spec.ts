@@ -1,4 +1,6 @@
+import { noop } from '@sama/micro-dash';
 import { expectSingleCallAndReset, staticTest } from '@sama/ng-dev';
+import { expectTypeOf } from 'expect-type';
 import { wrapFunction } from './wrap-function';
 
 describe('wrapFunction()', () => {
@@ -22,7 +24,7 @@ describe('wrapFunction()', () => {
     before = jasmine.createSpy();
     around = jasmine.createSpy().and.callFake(
       (
-        // eslint-disable-next-line @typescript-eslint/ban-types
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
         orig: Function,
         ...args: any[]
       ): [any, symbol] => [
@@ -155,9 +157,15 @@ describe('wrapFunction()', () => {
         return 1;
       }
 
+      expectTypeOf(wrapFunction(noop, {})).toEqualTypeOf<
+        (this: unknown) => void
+      >();
+      expectTypeOf(wrapFunction(f, {})).toEqualTypeOf<
+        (this: O, a1: string, a2: Date) => number
+      >();
       wrapFunction(f, {
         // @ts-expect-error wrong "this" type
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
+
         before(this: Date, _a1, _a2): void {},
       });
       wrapFunction(
@@ -177,7 +185,7 @@ describe('wrapFunction()', () => {
       });
       wrapFunction(f, {
         // @ts-expect-error _a1 should be string
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
+
         after(_r, _a1: Date): void {},
       });
     });

@@ -4,9 +4,9 @@ import { identity } from './identity';
  * Creates a function that returns the result of invoking the given functions with the `this` binding of the created function, where each successive invocation is supplied the return value of the previous.
  *
  * Differences from lodash:
- * - does not accept an arrays of functions
- * - all functions will be given only 1 argument (in lodash the first one called can take multiple)
- * - might not construct a new function when it is not needed
+ * - does not accept an array of functions
+ * - the first function called can take 0-1 arguments (in lodash it can be any number)
+ * - might not construct a new function when it is unnecessary
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 5,695 bytes
@@ -94,11 +94,9 @@ export function flow<A1, R1, R2, R3, R4, R5, R6, R7>(
   f7: (a: R6) => R7,
 ): (a1: A1) => R7;
 
-// generic function
-// export function flow<TResult extends Function>(...funcs: Function[]): TResult;
-// export function flow<TResult extends Function>(funcs: Function[]): TResult;
-
-export function flow<T>(...funcs: ReadonlyArray<(val: T) => T>): (val: T) => T;
+export function flow(): <T>(a: T) => T;
+export function flow<T>(f1: () => T, ...funcs: Array<(val: T) => T>): () => T;
+export function flow<T>(...funcs: Array<(val: T) => T>): (val: T) => T;
 
 export function flow(...funcs: readonly Function[]): Function {
   if (funcs.length) {

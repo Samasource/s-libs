@@ -4,18 +4,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/build
 
       - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/build
 
       - run: npm run lint -- --quiet
       - run: npm run prettier-lint
 
-      # build this to make sure no template compile errors crop up that tests didn't catch
+      # build this to make sure no template compile errors crop up that the tests didn't catch
       - run: npm run build -- integration

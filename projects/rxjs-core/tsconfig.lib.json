@@ -9,9 +9,11 @@
     "inlineSources": true,
     "types": []
   },
+  "include": ["src/**/*.ts"],
   "exclude": [
     "**/*.spec.ts",
     // excluded for the sake of TSDoc
-    "src/typing-tests"
+    "src/typing-tests",
+    "src/test-helpers"
   ]
 }

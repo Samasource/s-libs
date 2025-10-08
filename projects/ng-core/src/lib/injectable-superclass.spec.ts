@@ -1,5 +1,4 @@
-import { NgIf } from '@angular/common';
-import { Component, Directive, Injectable } from '@angular/core';
+import { Component, Directive, Injectable, inject } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ComponentContext, expectSingleCallAndReset } from '@sama/ng-dev';
@@ -18,18 +17,17 @@ class DestroyableService extends InjectableSuperclass {}
   providers: [DestroyableService],
 })
 class DestroyableDirective extends InjectableSuperclass {
-  constructor(
-    subject: Subject<any>,
-    public service: DestroyableService,
-  ) {
+  constructor() {
     super();
+
+    const subject = inject(Subject);
     this.subscribeTo(subject);
-    service.subscribeTo(subject);
+    inject(DestroyableService).subscribeTo(subject);
   }
 }
 
 @Component({
-  imports: [NgIf, DestroyableDirective],
+  imports: [DestroyableDirective],
   template: `@if (showThings) {
     <p slDestroyableDirective>I'm showing.</p>
   }`,
@@ -58,11 +56,11 @@ describe('InjectableSuperclass', () => {
 
   it('cleans up subscriptions when destroyed by angular', () => {
     ctx.run(() => {
-      expect(ctx.subject.observers.length).toBe(2);
+      expect(ctx.subject.observed).toBeTrue();
 
       ctx.getComponentInstance().showThings = false;
       ctx.fixture.detectChanges();
-      expect(ctx.subject.observers.length).toBe(0);
+      expect(ctx.subject.observed).toBeFalse();
     });
   });
 

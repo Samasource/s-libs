@@ -24,6 +24,4 @@ export type PartialExceptIndexes<T> = {
   [K in NonIndexKeys<T>]?: T[K];
 };
 
-export type Prettify<T> = {
-  [K in keyof T]: T[K];
-} & {};
+export type Prettify<T> = { [K in keyof T]: T[K] } & {};

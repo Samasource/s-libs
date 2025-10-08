@@ -112,7 +112,6 @@ import { FormComponentSuperclass } from './form-component-superclass';
  *
  * If you bind to your component using an {@linkcode NgControl} (e.g. when using `ngModel`), validation errors will be synchronized between it and the control inside your component. You can override various methods below to control or disable that process. Note that validation, `statuschanges`, and `valuechanges` may all happen more often as a result of this synchronization.
  */
-// eslint-disable-next-line @angular-eslint/prefer-standalone
 @Directive()
 export abstract class WrappedControlSuperclass<OuterType, InnerType = OuterType>
   extends FormComponentSuperclass<OuterType>
@@ -151,12 +150,12 @@ export abstract class WrappedControlSuperclass<OuterType, InnerType = OuterType>
     });
   }
 
-  /** Called as angular propagates values changes to this `ControlValueAccessor`. You normally do not need to use it. */
+  /** Called as Angular propagates values changes to this `ControlValueAccessor`. You normally do not need to use it. */
   handleIncomingValue(outer: OuterType): void {
     this.#incomingValues$.next(outer);
   }
 
-  /** Called as angular propagates disabled changes to this `ControlValueAccessor`. You normally do not need to use it. */
+  /** Called as Angular propagates disabled changes to this `ControlValueAccessor`. You normally do not need to use it. */
   override setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
       this.control.disable({ emitEvent: false });
@@ -196,6 +195,7 @@ export abstract class WrappedControlSuperclass<OuterType, InnerType = OuterType>
    * For more complex needs, see {@linkcode #setUpOuterToInnerValue$} instead.
    */
   protected outerToInnerValue(outer: OuterType): InnerType {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- sadly, this is known to be unsafe. Maybe we can improve it with a breaking change some day.
     return outer as unknown as InnerType;
   }
 
@@ -228,6 +228,7 @@ export abstract class WrappedControlSuperclass<OuterType, InnerType = OuterType>
    * For more complex needs, see {@linkcode #setUpInnerToOuterValue$} instead.
    */
   protected innerToOuterValue(inner: InnerType): OuterType {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- sadly, this is known to be unsafe. Maybe we can improve it with a breaking change some day.
     return inner as unknown as OuterType;
   }
 

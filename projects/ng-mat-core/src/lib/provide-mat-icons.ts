@@ -7,7 +7,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 /**
- * Registers a Material {@link https://material.angular.io/components/icon/overview#icon-sets | icon set} in the default namespace.
+ * Registers a Material {@link https://material.angular.dev/components/icon/overview#icon-sets | icon set} in the default namespace.
  *
  * **WARNING:** The `icons` string you pass in will bypass Angular's security measures! Including untrusted user data will expose your application to XSS security risks!
  *
@@ -51,15 +51,10 @@ import { DomSanitizer } from '@angular/platform-browser';
  */
 export function provideMatIcons(icons: string): EnvironmentProviders {
   return provideAppInitializer(() => {
-    const initializerFn = ((): VoidFunction => {
-      const registry = inject(MatIconRegistry);
-      const sanitizer = inject(DomSanitizer);
-      return () => {
-        registry.addSvgIconSetLiteral(
-          sanitizer.bypassSecurityTrustHtml(`<svg><defs>${icons}</defs></svg>`),
-        );
-      };
-    })();
-    return initializerFn();
+    inject(MatIconRegistry).addSvgIconSetLiteral(
+      inject(DomSanitizer).bypassSecurityTrustHtml(
+        `<svg><defs>${icons}</defs></svg>`,
+      ),
+    );
   });
 }
